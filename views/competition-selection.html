@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Competition</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyber-black: #0a0a0a;
+            --cyber-red: #ff003c;
+            --cyber-green: #00ff00;
+            --cyber-blue: #00aaff;
+            --neon-glow-green: 0 0 15px #00ff00;
+            --neon-glow-red: 0 0 15px #ff003c;
+            --neon-glow-blue: 0 0 15px #00aaff;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: var(--cyber-black);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* Matrix Background */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .matrix-column {
+            position: absolute;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                var(--cyber-red),
+                transparent
+            );
+            animation: matrixFall linear infinite;
+        }
+
+        @keyframes matrixFall {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        /* Glowing Grid */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(to right, rgba(255,0,60,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,0,60,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: gridMove 10s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-20px, -20px); }
+        }
+
+        /* Competition Cards */
+        .competition-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .competition-card {
+            background: rgba(10, 10, 10, 0.9);
+            border: 2px solid;
+            padding: 2rem;
+            width: 300px; /* Fixed width */
+            height: 300px; /* Fixed height */
+            text-align: center;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .competition-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px;
+        }
+
+        .competition-card.green {
+            border-color: var(--cyber-green);
+            box-shadow: var(--neon-glow-green);
+        }
+
+        .competition-card.red {
+            border-color: var(--cyber-red);
+            box-shadow: var(--neon-glow-red);
+        }
+
+        .competition-card.blue {
+            border-color: var(--cyber-blue);
+            box-shadow: var(--neon-glow-blue);
+        }
+
+        .competition-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .competition-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            flex-grow: 1;
+        }
+
+        .competition-card button {
+            background: transparent;
+            border: 2px solid;
+            color: white;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .competition-card.green button {
+            border-color: var(--cyber-green);
+        }
+
+        .competition-card.red button {
+            border-color: var(--cyber-red);
+        }
+
+        .competition-card.blue button {
+            border-color: var(--cyber-blue);
+        }
+
+        .competition-card button:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Background -->
+    <div class="matrix-bg">
+        <!-- Generate matrix columns dynamically -->
+        <script>
+            for (let i = 0; i < 50; i++) {
+                const col = document.createElement('div');
+                col.className = 'matrix-column';
+                col.style.left = `${Math.random() * 100}%`;
+                col.style.animationDuration = `${Math.random() * 2 + 3}s`;
+                col.style.animationDelay = `${Math.random() * 2}s`;
+                document.querySelector('.matrix-bg').appendChild(col);
+            }
+        </script>
+    </div>
+
+    <!-- Moving Grid Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Competition Selection -->
+    <div class="competition-container">
+        <!-- Raspberry Pi Generalities (Green) -->
+        <div class="competition-card green">
+            <h2>Raspberry Pi Generalities</h2>
+            <p>Learn the basics of Raspberry Pi and its applications.</p>
+            <button onclick="location.href='generalities.html'">Start</button>
+        </div>
+
+        <!-- Raspberry Pi Security (Red) -->
+        <div class="competition-card red">
+            <h2>Raspberry Pi Security</h2>
+            <p>Explore security practices and vulnerabilities in Raspberry Pi.</p>
+            <button onclick="location.href='security.html'">Start</button>
+        </div>
+
+        <!-- AI in Raspberry Pi (Blue) -->
+        <div class="competition-card blue">
+            <h2>Artificial Intelligence in Raspberry Pi</h2>
+            <p>Discover how to implement AI on Raspberry Pi.</p>
+            <button onclick="location.href='ai.html'">Start</button>
+        </div>
+    </div>
+</body>
+</html>

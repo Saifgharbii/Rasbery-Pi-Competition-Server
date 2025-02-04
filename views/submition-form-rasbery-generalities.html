@@ -10,8 +10,13 @@
     <style>
         /* competition.css */
         :root {
-            --cyber-red: #ff003c;
             --cyber-black: #0a0a0a;
+            --cyber-red: #ff003c;
+            --cyber-green: #00ff00;
+            --cyber-blue: #00aaff;
+            --neon-glow-green: 0 0 15px #00ff00;
+            --neon-glow-red: 0 0 15px #ff003c;
+            --neon-glow-blue: 0 0 15px #00aaff;
             --neon-glow: 0 0 15px var(--cyber-red);
         }
 
@@ -31,8 +36,8 @@
             width: 100%;
             height: 100%;
             background: repeating-linear-gradient(0deg,
-                    rgba(255, 0, 60, 0.1) 0px,
-                    rgba(255, 0, 60, 0.1) 1px,
+                    rgba(0, 255, 30, 0.1) 0px,
+                    rgba(0, 255, 30, 0.1) 1px,
                     transparent 1px,
                     transparent 2px);
             pointer-events: none;
@@ -40,26 +45,26 @@
         }
 
         .navbar {
-            border-bottom: 2px solid var(--cyber-red);
-            box-shadow: var(--neon-glow);
+            border-bottom: 2px solid var(--cyber-green);
+            box-shadow: var(--neon-glow-green);
         }
 
         .navbar-brand {
             font-weight: 700;
             letter-spacing: 2px;
-            text-shadow: var(--neon-glow);
+            text-shadow: var(--neon-glow-green);
         }
 
         #usernameDisplay {
-            color: var(--cyber-red);
-            text-shadow: var(--neon-glow);
+            color: white;
+            text-shadow: var(--neon-glow-green);
         }
 
         .cyber-card {
             background: linear-gradient(45deg, #1a1a1a 0%, #0a0a0a 100%);
-            border: 2px solid var(--cyber-red);
+            border: 2px solid var(--cyber-green);
             border-radius: 0;
-            box-shadow: var(--neon-glow);
+            box-shadow: var(--neon-glow-green);
             position: relative;
             overflow: hidden;
             margin: 2rem 0;
@@ -75,7 +80,7 @@
             height: 100%;
             background: linear-gradient(90deg,
                     transparent,
-                    rgba(255, 0, 60, 0.2),
+                    rgba(0, 255, 30, 0.2),
                     transparent);
             animation: scanline 6s infinite;
         }
@@ -92,7 +97,7 @@
 
         .challenge-box {
             background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--cyber-red);
+            border: 1px solid var(--cyber-green);
             padding: 1.5rem;
             margin: 1rem 0;
             transition: all 0.3s ease;
@@ -105,17 +110,17 @@
 
         .cyber-input {
             background: #111 !important;
-            border: 1px solid var(--cyber-red) !important;
+            border: 1px solid var(--cyber-green) !important;
             color: white !important;
             border-radius: 0 !important;
         }
 
         .cyber-input:focus {
-            box-shadow: var(--neon-glow);
+            box-shadow: var(--neon-glow-green);
         }
 
         .cyber-btn {
-            background: var(--cyber-red);
+            background: var(--cyber-green);
             border: none;
             padding: 1rem 2rem;
             font-weight: bold;
@@ -160,6 +165,9 @@
             margin-right: 1rem;
             box-shadow: var(--neon-glow);
         }
+        .text-danger{
+            color: var(--cyber-green)!important;
+        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -202,7 +210,7 @@
                 <div class="col-md-6 mb-4">
                     <h4 class="text-danger">QUIZ 01: Cyber Security</h4>
                     <p>What port does HTTPS typically use?</p>
-                    <select class="form-select cyber-input">
+                    <select class="form-select cyber-input" title="Select Answer for Quiz 01">
                         <option value="">Select Answer</option>
                         <option>80</option>
                         <option>443</option>
