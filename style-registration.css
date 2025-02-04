@@ -1,0 +1,54 @@
+:root {
+    --cyber-red: #ff003c;
+    --cyber-black: #0a0a0a;
+}
+
+body {
+    background: var(--cyber-black);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.cyber-card {
+    background: linear-gradient(45deg, #1a1a1a, #0a0a0a);
+    border: 2px solid var(--cyber-red);
+    border-radius: 0;
+    box-shadow: 0 0 15px var(--cyber-red);
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, var(--cyber-red), transparent);
+    animation: glow 4s linear infinite;
+}
+
+@keyframes glow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.cyber-input {
+    background: #111 !important;
+    border: 1px solid var(--cyber-red) !important;
+    color: white !important;
+}
+
+.cyber-btn {
+    background: var(--cyber-red);
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.cyber-btn:hover {
+    box-shadow: 0 0 15px var(--cyber-red);
+    transform: scale(1.05);
+}

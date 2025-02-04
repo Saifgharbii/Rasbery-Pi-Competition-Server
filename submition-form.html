@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberLabs Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-submition-form.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">CYBERLABS CTF</a>
+            <span class="text-danger">USER: <span id="usernameDisplay">[USERNAME]</span></span>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="cyber-card p-4 mb-4">
+            <h2 class="text-center">CHALLENGES</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4 class="text-danger">FLAG 01: Network Breach</h4>
+                    <p>Find the hidden flag in the packet capture</p>
+                    <input type="text" class="form-control cyber-input mb-3" placeholder="Enter Flag 01">
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <h4 class="text-danger">FLAG 02: Encrypted Vault</h4>
+                    <p>Decrypt the ciphertext using XOR 0x3A</p>
+                    <input type="text" class="form-control cyber-input mb-3" placeholder="Enter Flag 02">
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <h4 class="text-danger">QUIZ 01: Cyber Security</h4>
+                    <p>What port does HTTPS typically use?</p>
+                    <select class="form-select cyber-input">
+                        <option value="">Select Answer</option>
+                        <option>80</option>
+                        <option>443</option>
+                        <option>22</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn cyber-btn w-100" onclick="submitFlags()">SUBMIT SOLUTIONS</button>
+        </div>
+    </div>
+
+    <script>
+        // Display registered user
+        const userData = JSON.parse(localStorage.getItem('registration'));
+        document.getElementById('usernameDisplay').textContent = userData?.username || 'GUEST';
+
+        function submitFlags() {
+            const inputs = document.querySelectorAll('input, select');
+            const submissions = {
+                user: userData?.username,
+                timestamp: new Date().toISOString(),
+                flags: []
+            };
+
+            inputs.forEach((input, index) => {
+                submissions.flags.push({
+                    challenge: `Challenge ${index + 1}`,
+                    answer: input.value
+                });
+            });
+
+            // Save to localStorage
+            const existingData = JSON.parse(localStorage.getItem('submissions')) || [];
+            existingData.push(submissions);
+            localStorage.setItem('submissions', JSON.stringify(existingData));
+
+            alert('Submission Received!');
+        }
+    </script>
+</body>
+</html>
