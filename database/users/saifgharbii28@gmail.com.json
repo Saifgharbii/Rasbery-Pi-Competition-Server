@@ -1,0 +1,19 @@
+{
+  "email": "saifgharbii28@gmail.com",
+  "username": "saif",
+  "score": 0,
+  "quizs": {
+    "cyber": {
+      "starting_time": 0,
+      "problems": []
+    },
+    "ai": {
+      "starting_time": 0,
+      "problems": []
+    },
+    "rasbari": {
+      "starting_time": 0,
+      "problems": []
+    }
+  }
+}
