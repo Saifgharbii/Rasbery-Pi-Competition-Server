@@ -128,6 +128,10 @@
             border-radius: 0 !important;
         }
 
+        .cyber-input::placeholder {
+            color: rgb(172, 172, 172);
+        }
+
         .cyber-input:focus {
             box-shadow: var(--neon-glow-blue);
         }
@@ -242,8 +246,8 @@
     <script>
         const now = new Date();
         const last_enter_date = new Date("<%= start_time_ai %>");
-        const durationInMinutes = <%= duration_ai %> - ((now - last_enter_date ) / (1000 * 60));
-      </script>
+        const durationInMinutes = <%= duration_ai %> - ((now - last_enter_date) / (1000 * 60));
+    </script>
     <%- include('timer') -%>
 </body>
 
