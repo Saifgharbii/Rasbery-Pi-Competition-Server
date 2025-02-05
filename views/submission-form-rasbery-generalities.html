@@ -10,9 +10,13 @@
     <style>
         /* competition.css */
         :root {
-            --cyber-red: #ff003c;
             --cyber-black: #0a0a0a;
-            --neon-glow: 0 0 15px var(--cyber-red);
+            --cyber-red: #ff003c;
+            --cyber-green: #00ff00;
+            --cyber-blue: #00aaff;
+            --neon-glow-green: 0 0 15px #00ff00;
+            --neon-glow-red: 0 0 15px #ff003c;
+            --neon-glow-blue: 0 0 15px #00aaff;
         }
 
         body {
@@ -31,8 +35,8 @@
             width: 100%;
             height: 100%;
             background: repeating-linear-gradient(0deg,
-                    rgba(255, 0, 60, 0.1) 0px,
-                    rgba(255, 0, 60, 0.1) 1px,
+                    rgba(0, 255, 30, 0.1) 0px,
+                    rgba(0, 255, 30, 0.1) 1px,
                     transparent 1px,
                     transparent 2px);
             pointer-events: none;
@@ -40,26 +44,40 @@
         }
 
         .navbar {
-            border-bottom: 2px solid var(--cyber-red);
-            box-shadow: var(--neon-glow);
+            border-bottom: 2px solid var(--cyber-green);
+            box-shadow: var(--neon-glow-green);
         }
 
         .navbar-brand {
             font-weight: 700;
             letter-spacing: 2px;
-            text-shadow: var(--neon-glow);
+            text-shadow: var(--neon-glow-green);
         }
 
         #usernameDisplay {
-            color: var(--cyber-red);
-            text-shadow: var(--neon-glow);
+            color: white;
+            text-shadow: var(--neon-glow-green);
         }
+
+        /* Timer Styles */
+        #timer {
+            position: fixed;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--cyber-green);
+            text-shadow: var(--neon-glow-green);
+            z-index: 1000;
+        }
+
 
         .cyber-card {
             background: linear-gradient(45deg, #1a1a1a 0%, #0a0a0a 100%);
-            border: 2px solid var(--cyber-red);
+            border: 2px solid var(--cyber-green);
             border-radius: 0;
-            box-shadow: var(--neon-glow);
+            box-shadow: var(--neon-glow-green);
             position: relative;
             overflow: hidden;
             margin: 2rem 0;
@@ -75,7 +93,7 @@
             height: 100%;
             background: linear-gradient(90deg,
                     transparent,
-                    rgba(255, 0, 60, 0.2),
+                    rgba(0, 255, 30, 0.2),
                     transparent);
             animation: scanline 6s infinite;
         }
@@ -92,7 +110,7 @@
 
         .challenge-box {
             background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--cyber-red);
+            border: 1px solid var(--cyber-green);
             padding: 1.5rem;
             margin: 1rem 0;
             transition: all 0.3s ease;
@@ -100,22 +118,22 @@
 
         .challenge-box:hover {
             transform: translateY(-5px);
-            box-shadow: var(--neon-glow);
+            box-shadow: var(--neon-glow-green);
         }
 
         .cyber-input {
             background: #111 !important;
-            border: 1px solid var(--cyber-red) !important;
+            border: 1px solid var(--cyber-green) !important;
             color: white !important;
             border-radius: 0 !important;
         }
 
         .cyber-input:focus {
-            box-shadow: var(--neon-glow);
+            box-shadow: var(--neon-glow-green);
         }
 
         .cyber-btn {
-            background: var(--cyber-red);
+            background: var(--cyber-green);
             border: none;
             padding: 1rem 2rem;
             font-weight: bold;
@@ -140,7 +158,7 @@
         }
 
         .cyber-btn:hover {
-            box-shadow: var(--neon-glow);
+            box-shadow: var(--neon-glow-green);
             transform: scale(1.05);
         }
 
@@ -150,7 +168,7 @@
 
         /* Challenge Number Badges */
         .challenge-number {
-            background: var(--cyber-red);
+            background: var(--cyber-green);
             width: 40px;
             height: 40px;
             display: flex;
@@ -158,7 +176,11 @@
             justify-content: center;
             font-weight: bold;
             margin-right: 1rem;
-            box-shadow: var(--neon-glow);
+            box-shadow: var(--neon-glow-green);
+        }
+
+        .text-danger {
+            color: var(--cyber-green) !important;
         }
 
         /* Responsive Design */
@@ -179,6 +201,8 @@
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">CYBERLABS CTF</a>
+            <!-- Timer Display -->
+            <div id="timer">00:00</div>
             <span class="text-danger">USER: <span id="usernameDisplay">[USERNAME]</span></span>
         </div>
     </nav>
@@ -216,6 +240,30 @@
     </div>
 
     <script>
+        // Timer Logic
+        const durationInMinutes = 1; // Set the timer duration here (in minutes)
+        let timeLeft = durationInMinutes * 60; // Convert to seconds
+
+        const timerElement = document.getElementById('timer');
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                timerElement.textContent = "TIME'S UP!";
+                timerElement.style.color = 'red';
+                timerElement.style.textShadow = '0 0 15px red';
+                alert("Time's up! Submitting your answers...");
+                submitFlags(); // Automatically submit when time runs out
+            } else {
+                timeLeft--;
+            }
+        }
+
+        const timerInterval = setInterval(updateTimer, 1000);
         // Display registered user
         const userData = JSON.parse(localStorage.getItem('registration'));
         document.getElementById('usernameDisplay').textContent = userData?.username || 'GUEST';
