@@ -98,7 +98,7 @@ app.get('/signin', function (req, res) {
     if (req.session.user) {
         res.redirect('/');
     } else {
-        res.render('registration-new');
+        res.render('registeration');
     }
 });
 
