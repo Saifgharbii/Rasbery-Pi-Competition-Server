@@ -1,0 +1,25 @@
+<div class="row">
+    <% challenges.forEach(function(challenge, index) { %>
+      <div class="col-md-6 mb-4">
+        <h4 class="text-danger">
+          <% if (challenge.type === 'input') { %>
+            FLAG 0<%= index + 1 %>: <%= challenge.title %>
+          <% } else { %>
+            QUIZ 0<%= index + 1 %>: <%= challenge.title %>
+          <% } %>
+        </h4>
+        <p><%= challenge.description %></p>
+  
+        <% if (challenge.type === 'input') { %>
+          <input type="text" class="form-control mb-3" placeholder="Enter answer" id="<%= type %>-<%= index %>" onchange="saveinput(this)">
+        <% } else if (challenge.type === 'select') { %>
+          <select class="form-select" onchange="saveselect(this)" id="<%= type %>-<%= index %>">
+            <% challenge.options.forEach(function(option) { %>
+              <option><%= option %></option>
+            <% }); %>
+          </select>
+        <% } %>
+      </div>
+    <% }); %>
+  </div>
+  

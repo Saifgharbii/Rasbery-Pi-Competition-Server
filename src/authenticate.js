@@ -4,14 +4,13 @@ const path = require("path");
 user_data_struct = {
   email: "",
   username: "",
-  score: 0, 
+  score: 0,
   quizs: {
-    cyber: { duration_in_m:30, starting_time: 0, problems_solved: [] },
-    ai: { duration_in_m:30, starting_time: 0, problems_solved: [] },
-    rasbari: { duration_in_m:30, starting_time: 0, problems_solved: [] },
+    cyber: { duration_in_m: 30, starting_time: 0, problems_solved: [] },
+    ai: { duration_in_m: 30, starting_time: 0, problems_solved: [] },
+    rasbari: { duration_in_m: 30, starting_time: 0, problems_solved: [] },
   },
 };
-
 
 // Authenticate using our plain-object database of doom!
 function authenticate(email, usename, fn) {
@@ -37,9 +36,7 @@ function authenticate(email, usename, fn) {
       try {
         fs.writeFileSync(userFilePath, JSON.stringify(userData, null, 2)); // Write the default structure to the file
 
-        console.log(
-          `new email "${email}"`
-        );
+        console.log(`new email "${email}"`);
       } catch (writeErr) {
         console.error("Error creating the file:", writeErr);
         return fn(null, false);

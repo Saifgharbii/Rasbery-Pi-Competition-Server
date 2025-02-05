@@ -1,0 +1,32 @@
+<script>
+  function saveinput(e) {
+    localStorage.setItem(e.id, e.value);
+  }
+  function saveselect(e) {
+    localStorage.setItem(e.id, e.value);
+  }
+
+  function restoreInput() {
+    document.querySelectorAll(".form-control").forEach((input) => {
+      let savedValue = localStorage.getItem(input.id);
+      if (savedValue) {
+        input.value = savedValue;
+      }
+    });
+  }
+
+  function restoreSelection() {
+    document.querySelectorAll(".form-select").forEach((select) => {
+      let savedValue = localStorage.getItem(select.id);
+      if (savedValue) {
+        select.value = savedValue;
+      }
+    });
+  }
+
+  // Call restoreSelection when the page loads
+  window.onload = function () {
+    restoreInput();
+    restoreSelection();
+  };
+</script>

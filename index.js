@@ -8,6 +8,9 @@ const cookieParser = require("cookie-parser");
 
 const authenticate = require("./src/authenticate");
 const updatetime = require("./src/updatetime");
+const ai_challenges = require("./src/challengs_ai");
+const ras_challenges = require("./src/challengs_ras");
+const cyber_challenges = require("./src/challengs_cyber");
 
 // config
 app.use(
@@ -48,6 +51,13 @@ app.use(function (req, res, next) {
   res.locals.message = "";
   if (err) res.locals.message = '<p class="msg error">' + err + "</p>";
   if (msg) res.locals.message = '<p class="msg success">' + msg + "</p>";
+
+  res.locals.ai_challenges = ai_challenges;
+
+  res.locals.cyber_challenges = cyber_challenges;
+
+  res.locals.ras_challenges = ras_challenges;
+
   next();
 });
 
@@ -125,9 +135,10 @@ app.get("/submission-form-security", function (req, res) {
     return;
   }
   updatetime(req, "cyber");
-  res.locals.duration_sec = req.session.user.quizs.cyber.duration_in_m;
-  res.locals.start_time_sec = req.session.user.quizs.cyber.starting_time;
-  res.render("submission-form-security");
+  res.render("submission-form-security", {
+    duration_sec: req.session.user.quizs.cyber.duration_in_m,
+    start_time_sec: req.session.user.quizs.cyber.starting_time,
+  });
 });
 
 app.get("/submission-form-rasbery-generalities", function (req, res) {
@@ -136,9 +147,10 @@ app.get("/submission-form-rasbery-generalities", function (req, res) {
     return;
   }
   updatetime(req, "rasbari");
-  res.locals.duration_ras = req.session.user.quizs.rasbari.duration_in_m;
-  res.locals.start_time_ras = req.session.user.quizs.rasbari.starting_time;
-  res.render("submission-form-rasbery-generalities");
+  res.render("submission-form-rasbery-generalities", {
+    duration_ras: req.session.user.quizs.rasbari.duration_in_m,
+    start_time_ras: req.session.user.quizs.rasbari.starting_time,
+  });
 });
 
 app.get("/submission-form-ai", async function (req, res) {
@@ -147,9 +159,11 @@ app.get("/submission-form-ai", async function (req, res) {
     return;
   }
   await updatetime(req, "ai");
-  res.locals.duration_ai = req.session.user.quizs.ai.duration_in_m;
-  res.locals.start_time_ai = req.session.user.quizs.ai.starting_time;
-  res.render("submission-form-ai");
+
+  res.render("submission-form-ai", {
+    duration_ai: req.session.user.quizs.ai.duration_in_m,
+    start_time_ai: req.session.user.quizs.ai.starting_time,
+  });
 });
 
 /* istanbul ignore next */

@@ -24,28 +24,5 @@
   }
 
   const timerInterval = setInterval(updateTimer, 1000);
-  updateTimer()
-
-  function submitFlags() {
-    const inputs = document.querySelectorAll("input, select");
-    const submissions = {
-      user: userData?.username,
-      timestamp: new Date().toISOString(),
-      flags: [],
-    };
-
-    inputs.forEach((input, index) => {
-      submissions.flags.push({
-        challenge: `Challenge ${index + 1}`,
-        answer: input.value,
-      });
-    });
-
-    // Save to localStorage
-    const existingData = JSON.parse(localStorage.getItem("submissions")) || [];
-    existingData.push(submissions);
-    localStorage.setItem("submissions", JSON.stringify(existingData));
-
-    alert("Submission Received!");
-  }
+  updateTimer();
 </script>

@@ -1,254 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CyberLabs Competition</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        /* competition.css */
-        :root {
-            --cyber-black: #0a0a0a;
-            --cyber-red: #ff003c;
-            --cyber-green: #00ff00;
-            --cyber-blue: #00aaff;
-            --neon-glow-green: 0 0 15px #00ff00;
-            --neon-glow-red: 0 0 15px #ff003c;
-            --neon-glow-blue: 0 0 15px #00aaff;
+      /* competition.css */
+      :root {
+        --cyber-black: #0a0a0a;
+        --cyber-red: #ff003c;
+        --cyber-green: #00ff00;
+        --cyber-blue: #00aaff;
+        --neon-glow-green: 0 0 15px #00ff00;
+        --neon-glow-red: 0 0 15px #ff003c;
+        --neon-glow-blue: 0 0 15px #00aaff;
+      }
+
+      body {
+        background: var(--cyber-black);
+        color: white;
+        font-family: "Orbitron", sans-serif;
+        min-height: 100vh;
+      }
+
+      /* Cyber Terminal Effect */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(
+          0deg,
+          rgba(0, 0, 255, 0.1) 0px,
+          rgba(0, 0, 255, 0.1) 1px,
+          transparent 1px,
+          transparent 2px
+        );
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .navbar {
+        border-bottom: 2px solid var(--cyber-blue);
+        box-shadow: var(--neon-glow-blue);
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-shadow: var(--neon-glow-blue);
+      }
+
+      #usernameDisplay {
+        color: white;
+        text-shadow: var(--neon-glow-blue);
+      }
+
+      /* Timer Styles */
+      #timer {
+        position: fixed;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--cyber-blue);
+        text-shadow: var(--neon-glow-blue);
+        z-index: 1000;
+      }
+
+      .cyber-card {
+        background: linear-gradient(45deg, #1a1a1a 0%, #0a0a0a 100%);
+        border: 2px solid var(--cyber-blue);
+        border-radius: 0;
+        box-shadow: var(--neon-glow-blue);
+        position: relative;
+        overflow: hidden;
+        margin: 2rem 0;
+        padding: 2rem;
+      }
+
+      .cyber-input::placeholder {
+        color: rgba(255, 255, 255, 0.637);
+      }
+
+      .cyber-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 0, 255, 0.2),
+          transparent
+        );
+        animation: scanline 6s infinite;
+        pointer-events: none;
+      }
+
+      @keyframes scanline {
+        0% {
+          left: -100%;
         }
 
-        body {
-            background: var(--cyber-black);
-            color: white;
-            font-family: 'Orbitron', sans-serif;
-            min-height: 100vh;
+        100% {
+          left: 100%;
         }
+      }
 
-        /* Cyber Terminal Effect */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(0deg,
-                    rgba(0, 0, 255, 0.1) 0px,
-                    rgba(0, 0, 255, 0.1) 1px,
-                    transparent 1px,
-                    transparent 2px);
-            pointer-events: none;
-            z-index: -1;
-        }
+      .challenge-box {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid var(--cyber-blue);
+        padding: 1.5rem;
+        margin: 1rem 0;
+        transition: all 0.3s ease;
+      }
 
-        .navbar {
-            border-bottom: 2px solid var(--cyber-blue);
-            box-shadow: var(--neon-glow-blue);
-        }
+      .challenge-box:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--neon-glow-blue);
+      }
 
-        .navbar-brand {
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-shadow: var(--neon-glow-blue);
-        }
+      .cyber-input {
+        background: #111 !important;
+        border: 1px solid var(--cyber-blue) !important;
+        color: white !important;
+        border-radius: 0 !important;
+      }
 
-        #usernameDisplay {
-            color: white;
-            text-shadow: var(--neon-glow-blue);
-        }
+      .cyber-input:focus {
+        box-shadow: var(--neon-glow-blue);
+      }
 
-        /* Timer Styles */
-        #timer {
-            position: fixed;
-            top: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--cyber-blue);
-            text-shadow: var(--neon-glow-blue);
-            z-index: 1000;
-        }
+      .cyber-btn {
+        background: var(--cyber-blue);
+        border: none;
+        padding: 1rem 2rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+      }
 
+      .cyber-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .cyber-btn:hover {
+        box-shadow: var(--neon-glow-blue);
+      }
+
+      .cyber-btn:hover::before {
+        left: 100%;
+      }
+
+      /* Challenge Number Badges */
+      .challenge-number {
+        background: var(--cyber-blue);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 1rem;
+        box-shadow: var(--neon-glow-blue);
+      }
+
+      .text-danger {
+        color: var(--cyber-blue) !important;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .cyber-card {
-            background: linear-gradient(45deg, #1a1a1a 0%, #0a0a0a 100%);
-            border: 2px solid var(--cyber-blue);
-            border-radius: 0;
-            box-shadow: var(--neon-glow-blue);
-            position: relative;
-            overflow: hidden;
-            margin: 2rem 0;
-            padding: 2rem;
-        }
-
-        .cyber-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg,
-                    transparent,
-                    rgba(0, 0, 255, 0.2),
-                    transparent);
-            animation: scanline 6s infinite;
-            pointer-events: none;
-        }
-
-        @keyframes scanline {
-            0% {
-                left: -100%;
-            }
-
-            100% {
-                left: 100%;
-            }
+          margin: 1rem;
+          padding: 1rem;
         }
 
         .challenge-box {
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--cyber-blue);
-            padding: 1.5rem;
-            margin: 1rem 0;
-            transition: all 0.3s ease;
+          padding: 1rem;
         }
-
-        .challenge-box:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--neon-glow-blue);
-        }
-
-        .cyber-input {
-            background: #111 !important;
-            border: 1px solid var(--cyber-blue) !important;
-            color: white !important;
-            border-radius: 0 !important;
-        }
-
-        .cyber-input::placeholder {
-            color: rgb(172, 172, 172);
-        }
-
-        .cyber-input:focus {
-            box-shadow: var(--neon-glow-blue);
-        }
-
-        .cyber-btn {
-            background: var(--cyber-blue);
-            border: none;
-            padding: 1rem 2rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .cyber-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.2),
-                    transparent);
-            transition: 0.5s;
-        }
-
-        .cyber-btn:hover {
-            box-shadow: var(--neon-glow-blue);
-        }
-
-        .cyber-btn:hover::before {
-            left: 100%;
-        }
-
-        /* Challenge Number Badges */
-        .challenge-number {
-            background: var(--cyber-blue);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 1rem;
-            box-shadow: var(--neon-glow-blue);
-        }
-
-        .text-danger {
-            color: var(--cyber-blue) !important;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .cyber-card {
-                margin: 1rem;
-                padding: 1rem;
-            }
-
-            .challenge-box {
-                padding: 1rem;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="/">RAS CAMP</a>
-            <!-- Timer Display -->
-            <div id="timer">00:00</div>
-            <span class="text-danger">USER: <span id="usernameDisplay"><%- username -%></span></span>
-        </div>
+      <div class="container">
+        <a class="navbar-brand" href="/">RAS CAMP</a>
+        <!-- Timer Display -->
+        <div id="timer">00:00</div>
+        <span class="text-danger"
+          >USER: <span id="usernameDisplay"><%- username -%></span></span
+        >
+      </div>
     </nav>
 
     <div class="container py-5">
-        <div class="cyber-card p-4 mb-4">
-            <h2 class="text-center">CHALLENGES</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <h4 class="text-danger">FLAG 01: Network Breach</h4>
-                    <p>Find the hidden flag in the packet capture</p>
-                    <input type="text" class="form-control cyber-input mb-3" placeholder="Enter Flag 01">
-                </div>
+      <div class="cyber-card p-4 mb-4">
+        <h2 class="text-center">CHALLENGES</h2>
 
-                <div class="col-md-6 mb-4">
-                    <h4 class="text-danger">FLAG 02: Encrypted Vault</h4>
-                    <p>Decrypt the ciphertext using XOR 0x3A</p>
-                    <input type="text" class="form-control cyber-input mb-3" placeholder="Enter Flag 02">
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <h4 class="text-danger">QUIZ 01: Cyber Security</h4>
-                    <p>What port does HTTPS typically use?</p>
-                    <select class="form-select cyber-input" title="Select Answer for Quiz 01">
-                        <option value="">Select Answer</option>
-                        <option>80</option>
-                        <option>443</option>
-                        <option>22</option>
-                    </select>
-                </div>
-            </div>
-
-            <button class="btn cyber-btn w-100" onclick="submitFlags()">SUBMIT SOLUTIONS</button>
-        </div>
+        <%- include('challenges', { challenges: ai_challenges, type: "ai" }) -%>
+        <button class="btn cyber-btn w-100" onclick="submitFlags()">
+          SUBMIT SOLUTIONS
+        </button>
+      </div>
     </div>
 
-
     <script>
-        const now = new Date();
-        const last_enter_date = new Date("<%= start_time_ai %>");
-        const durationInMinutes = <%= duration_ai %> - ((now - last_enter_date) / (1000 * 60));
+      const now = new Date();
+      const last_enter_date = new Date("<%= start_time_ai %>");
+      const durationInMinutes = <%= duration_ai %> - ((now - last_enter_date ) / (1000 * 60));
     </script>
-    <%- include('timer') -%>
-</body>
-
+    <%- include('timer') -%> <%- include('save_responces') -%> <%-
+    include('send_challenges') -%>
+  </body>
 </html>
