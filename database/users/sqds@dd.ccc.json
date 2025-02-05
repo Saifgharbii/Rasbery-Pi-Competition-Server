@@ -1,0 +1,18 @@
+{
+  "email": "sqds@dd.ccc",
+  "username": "sqdsqdqs",
+  "quizs": {
+    "cyber": {
+      "starting_time": 0,
+      "problems": []
+    },
+    "ai": {
+      "starting_time": 0,
+      "problems": []
+    },
+    "rasbari": {
+      "starting_time": 0,
+      "problems": []
+    }
+  }
+}
