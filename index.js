@@ -8,9 +8,9 @@ const cookieParser = require("cookie-parser");
 
 const authenticate = require("./src/authenticate");
 const updatetime = require("./src/updatetime");
-const ai_challenges = require("./src/challengs_ai");
-const ras_challenges = require("./src/challengs_ras");
-const cyber_challenges = require("./src/challengs_cyber");
+const ai_challenges = require("./src/challenges_ai");
+const ras_challenges = require("./src/challenges_ras");
+const cyber_challenges = require("./src/challenges_cyber");
 
 // config
 app.use(
@@ -24,6 +24,7 @@ app.use("/static", express.static(path.join(__dirname, "public")));
 
 // middleware
 app.use(cookieParser());
+app.use(express.json());
 app.use(
   session({
     resave: false, // don't save session if unmodified
@@ -164,6 +165,28 @@ app.get("/submission-form-ai", async function (req, res) {
     duration_ai: req.session.user.quizs.ai.duration_in_m,
     start_time_ai: req.session.user.quizs.ai.starting_time,
   });
+});
+
+
+
+
+app.post("/save", async function (req, res) {
+  if (!req.session.user) {
+    res.redirect("/");
+    return;
+  }
+
+  const referer = req.get('Referer') || req.get('Origin');
+  console.log(req.body, referer)
+
+  if (referer.includes('submission-form-rasbery-generalities')) {
+
+  } else if (referer.includes('submission-form-security')) {
+
+  } else if (referer.includes('submission-form-ai')) {
+
+  }
+
 });
 
 /* istanbul ignore next */

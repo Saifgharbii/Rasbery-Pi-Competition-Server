@@ -1,0 +1,22 @@
+{
+  "email": "w@x.com",
+  "username": "w",
+  "score": 0,
+  "quizs": {
+    "cyber": {
+      "duration_in_m": 30,
+      "starting_time": 0,
+      "problems_solved": []
+    },
+    "ai": {
+      "duration_in_m": 30,
+      "starting_time": "2025-02-05T23:36:22.347Z",
+      "problems_solved": []
+    },
+    "rasbari": {
+      "duration_in_m": 30,
+      "starting_time": "2025-02-05T23:24:48.531Z",
+      "problems_solved": []
+    }
+  }
+}
