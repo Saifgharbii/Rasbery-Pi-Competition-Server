@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Board</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyber-black: #0a0a0a;
+            --cyber-blue: #00aaff;
+            --neon-glow-blue: 0 0 15px #00aaff;
+        }
+
+        body {
+            background: var(--cyber-black);
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* Cyber Terminal Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg,
+                    rgba(0, 0, 255, 0.1) 0px,
+                    rgba(0, 0, 255, 0.1) 1px,
+                    transparent 1px,
+                    transparent 2px);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .cyber-card {
+            background: linear-gradient(45deg, #1a1a1a 0%, #0a0a0a 100%);
+            border: 2px solid var(--cyber-blue);
+            border-radius: 0;
+            box-shadow: var(--neon-glow-blue);
+            position: relative;
+            overflow: hidden;
+            margin: 2rem auto;
+            padding: 2rem;
+            max-width: 800px;
+        }
+
+        .cyber-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(0, 0, 255, 0.2),
+                    transparent);
+            animation: scanline 6s infinite;
+        }
+
+        @keyframes scanline {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .score-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: var(--cyber-blue);
+            text-shadow: var(--neon-glow-blue);
+            margin-bottom: 2rem;
+        }
+
+        .scoreboard {
+            margin-top: 2rem;
+        }
+
+        .scoreboard table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .scoreboard th,
+        .scoreboard td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--cyber-blue);
+        }
+
+        .scoreboard th {
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--cyber-blue);
+            text-shadow: var(--neon-glow-blue);
+        }
+
+        .scoreboard tr:hover {
+            background: rgba(0, 0, 255, 0.1);
+        }
+
+        /* Highlight the current user's row */
+        .current-user {
+            background: rgba(0, 170, 255, 0.1); /* Light blue background */
+            border: 2px solid var(--cyber-blue); /* Glowing border */
+            box-shadow: var(--neon-glow-blue); /* Neon glow effect */
+        }
+
+        .current-user td {
+            font-weight: bold; /* Bold text for emphasis */
+            color: var(--cyber-blue); /* Blue text color */
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-card">
+        <!-- Participant's Score -->
+        <div class="score-display" id="participantScore">
+            Your Score: <span id="scoreValue">0</span> / <span id="totalScore">100</span>
+        </div>
+
+        <!-- Scoreboard -->
+        <div class="scoreboard">
+            <h2 class="text-center">Scoreboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Score</th>
+                        <th>Time Taken</th>
+                    </tr>
+                </thead>
+                <tbody id="scoreboardBody">
+                    <!-- Scores will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Fake Data for Prototyping
+        const fakeData = [
+            { username: "Hacker1", score: 95, timeTaken: "12:34" },
+            { username: "CyberMaster", score: 85, timeTaken: "15:20" },
+            { username: "CodeBreaker", score: 80, timeTaken: "18:45" },
+            { username: "Guest", score: 70, timeTaken: "20:00" },
+        ];
+
+        // Get the current participant's data from localStorage
+        const participantData = JSON.parse(localStorage.getItem('participantScore')) || { username: "Guest", score: 0, timeTaken: "00:00" };
+
+        // Display Participant's Score
+        document.getElementById('scoreValue').textContent = participantData.score;
+        document.getElementById('totalScore').textContent = 100; // Total score (can be dynamic)
+
+        // Populate Scoreboard
+        const scoreboardBody = document.getElementById('scoreboardBody');
+        fakeData.sort((a, b) => b.score - a.score || a.timeTaken.localeCompare(b.timeTaken)); // Sort by score, then by time
+
+        fakeData.forEach((entry, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${entry.username}</td>
+                <td>${entry.score}</td>
+                <td>${entry.timeTaken}</td>
+            `;
+
+            // Add a special class if this row belongs to the current user
+            if (entry.username === participantData.username) {
+                row.classList.add('current-user');
+            }
+
+            scoreboardBody.appendChild(row);
+        });
+    </script>
+</body>
+</html>
