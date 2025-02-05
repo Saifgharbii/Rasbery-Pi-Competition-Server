@@ -6,9 +6,9 @@ user_data_struct = {
   username: "",
   score: 0, 
   quizs: {
-    cyber: { starting_time: 0, problems: [] },
-    ai: { starting_time: 0, problems: [] },
-    rasbari: { starting_time: 0, problems: [] },
+    cyber: { duration_in_m:30, starting_time: 0, problems_solved: [] },
+    ai: { duration_in_m:30, starting_time: 0, problems_solved: [] },
+    rasbari: { duration_in_m:30, starting_time: 0, problems_solved: [] },
   },
 };
 
@@ -38,7 +38,7 @@ function authenticate(email, usename, fn) {
         fs.writeFileSync(userFilePath, JSON.stringify(userData, null, 2)); // Write the default structure to the file
 
         console.log(
-          `File "${userFilePath}" created with default user data structure.`
+          `new email "${email}"`
         );
       } catch (writeErr) {
         console.error("Error creating the file:", writeErr);
