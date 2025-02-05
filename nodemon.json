@@ -1,0 +1,6 @@
+{
+  "ext": "js,json",
+  "ignore": ["node_modules", "database", "public"],
+  "exec": "node"
+}
+
