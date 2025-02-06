@@ -4,7 +4,6 @@ function calculate_score(quiz_challenges, user_response) {
 
   user_response.forEach((response) => {
     let challengeIndex = parseInt(response.challenge);
-    console.log(quiz_challenges[challengeIndex].solution, response.answer);
     if (
       quiz_challenges[challengeIndex] &&
       quiz_challenges[challengeIndex].solution === response.answer

@@ -244,7 +244,6 @@ app.post("/save", async function (req, res) {
   }
 
   await save_user_data(req);
-  console.log(req.session.user);
 
   res.status(200).send("Request was successful!");
 });

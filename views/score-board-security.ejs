@@ -15,8 +15,8 @@
     <style>
       :root {
         --cyber-black: #0a0a0a;
-        --cyber-blue: #ff003c;
-        --neon-glow-blue: 0 0 15px #ff003c;
+        --cyber-red: #ff003c;
+        --neon-glow-red: 0 0 15px #ff003c;
       }
 
       body {
@@ -47,25 +47,25 @@
 
       .navbar {
         border-bottom: 2px solid var(--cyber-red);
-        box-shadow: var(--neon-glow);
+        box-shadow: var(--neon-glow-red);
       }
 
       .navbar-brand {
         font-weight: 700;
         letter-spacing: 2px;
-        text-shadow: var(--neon-glow);
+        text-shadow: var(--neon-glow-red);
       }
 
       #usernameDisplay {
         color: var(--cyber-red);
-        text-shadow: var(--neon-glow);
+        text-shadow: var(--neon-glow-red);
       }
 
       .cyber-card {
         background: linear-gradient(45deg, #1a1a1a 0%, #0a0a0a 100%);
-        border: 2px solid var(--cyber-blue);
+        border: 2px solid var(--cyber-red);
         border-radius: 0;
-        box-shadow: var(--neon-glow-blue);
+        box-shadow: var(--neon-glow-red);
         position: relative;
         overflow: hidden;
         margin: 2rem auto;
@@ -103,8 +103,8 @@
         font-size: 2.5rem;
         font-weight: bold;
         text-align: center;
-        color: var(--cyber-blue);
-        text-shadow: var(--neon-glow-blue);
+        color: var(--cyber-red);
+        text-shadow: var(--neon-glow-red);
         margin-bottom: 2rem;
       }
 
@@ -121,13 +121,13 @@
       .scoreboard td {
         padding: 1rem;
         text-align: center;
-        border: 1px solid var(--cyber-blue);
+        border: 1px solid var(--cyber-red);
       }
 
       .scoreboard th {
         background: rgba(0, 0, 0, 0.5);
-        color: var(--cyber-blue);
-        text-shadow: var(--neon-glow-blue);
+        color: var(--cyber-red);
+        text-shadow: var(--neon-glow-red);
       }
 
       .scoreboard tr:hover {
@@ -137,13 +137,41 @@
       /* Highlight the current user's row */
       .current-user {
         background: rgba(255, 0, 170, 0.1); /* Light blue background */
-        border: 2px solid var(--cyber-blue); /* Glowing border */
-        box-shadow: var(--neon-glow-blue); /* Neon glow effect */
+        border: 2px solid var(--cyber-red); /* Glowing border */
+        box-shadow: var(--neon-glow-red); /* Neon glow effect */
       }
 
       .current-user td {
         font-weight: bold; /* Bold text for emphasis */
-        color: var(--cyber-blue); /* Blue text color */
+        color: var(--cyber-red); /* Blue text color */
+      }
+
+      /* Retake Challenge Button */
+      .retake-btn {
+        background: var(--cyber-red);
+        border: 2px solid var(--cyber-red);
+        color: white;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-top: 2rem;
+        width: 100%;
+        box-shadow: var(--neon-glow-red);
+      }
+
+      .retake-btn:hover {
+        background: transparent;
+        color: var(--cyber-red);
+        box-shadow: 0 0 25px var(--cyber-red);
+        transform: scale(1.05);
+      }
+
+      .retake-btn:active {
+        transform: scale(0.95);
       }
     </style>
   </head>
@@ -181,7 +209,13 @@
           </tbody>
         </table>
       </div>
-      <% if (!is_time_up_cyber) { %><button onclick="location.href='/submission-form-security'">Retake The Challenge</button><% } %>
+
+      <!-- Retake Challenge Button -->
+      <% if (!is_time_up_cyber) { %>
+        <button class="retake-btn" onclick="location.href='/submission-form-security'">
+          Retake The Challenge
+        </button>
+      <% } %>
     </div>
 
     <%- include('score_board_js', { userData: userData, email: email}) -%>

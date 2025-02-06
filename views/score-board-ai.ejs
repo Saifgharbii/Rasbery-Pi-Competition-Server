@@ -151,6 +151,33 @@
         font-weight: bold; /* Bold text for emphasis */
         color: var(--cyber-blue); /* Blue text color */
       }
+          /* Retake Challenge Button */
+    .retake-btn {
+      background: var(--cyber-blue);
+      border: 2px solid var(--cyber-blue);
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 2rem;
+      width: 100%;
+      box-shadow: var(--neon-glow-blue);
+    }
+
+    .retake-btn:hover {
+      background: transparent;
+      color: var(--cyber-blue);
+      box-shadow: 0 0 25px var(--cyber-blue);
+      transform: scale(1.05);
+    }
+
+    .retake-btn:active {
+      transform: scale(0.95);
+    }
     </style>
   </head>
   <body>
@@ -187,7 +214,7 @@
           </tbody>
         </table>
       </div>
-      <% if (!is_time_up_ai) { %><button onclick="location.href='/submission-form-ai'">Retake The Challenge</button><% } %>
+      <% if (!is_time_up_ai) { %><button class="retake-btn" onclick="location.href='/submission-form-ai'">Retake The Challenge</button><% } %>
     </div>
 
     <%- include('score_board_js', { userData: userData, email: email}) -%>
