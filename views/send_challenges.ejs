@@ -4,6 +4,7 @@
 
     while (attempts < maxRetries) {
       try {
+        
         const response = await fetch(url, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -12,9 +13,12 @@
 
         if (!response.ok) {
           throw new Error(`Server error: ${response.status}`);
+        } else {
+          window.location.href = "/result";
+          alert("Submission Received!");
         }
 
-        return await response.json(); // Return response if successful
+        return
       } catch (error) {
         console.error(`Attempt ${attempts + 1} failed: ${error.message}`);
         attempts++;
@@ -37,15 +41,14 @@
 
     inputs.forEach((input, index) => {
       submissions.flags.push({
-        challenge: `Challenge ${index + 1}`,
+        challenge: input.id,
         answer: input.value,
       });
     });
 
     const url = "/save";
 
-    sendPostRequest(url, submissions  )
-    .then(_ => alert("Submission Received!"))
+    sendPostRequest(url, submissions)
     .catch(error => console.error("Final failure:", error));
 
   }

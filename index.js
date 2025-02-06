@@ -11,6 +11,7 @@ const updatetime = require("./src/updatetime");
 const ai_challenges = require("./src/challenges_ai");
 const ras_challenges = require("./src/challenges_ras");
 const cyber_challenges = require("./src/challenges_cyber");
+const save_user_data = require("./src/save_user_data");
 
 // config
 app.use(
@@ -167,26 +168,43 @@ app.get("/submission-form-ai", async function (req, res) {
   });
 });
 
-
-
-
 app.post("/save", async function (req, res) {
   if (!req.session.user) {
     res.redirect("/");
     return;
   }
 
-  const referer = req.get('Referer') || req.get('Origin');
-  console.log(req.body, referer)
+  const referer = req.get("Referer") || req.get("Origin");
+  console.log(req.body, referer);
 
-  if (referer.includes('submission-form-rasbery-generalities')) {
-
-  } else if (referer.includes('submission-form-security')) {
-
-  } else if (referer.includes('submission-form-ai')) {
-
+  if (
+    referer.includes("submission-form-rasbery-generalities") &&
+    (new Date(req.session.user["quizs"]["rasbari"]["starting_time"]) -
+      new Date()) /
+      (1000 * 60) <=
+      req.session.user["quizs"]["rasbari"]["duration_in_m"]
+  ) {
+    req.session.user["quizs"]["rasbari"]["problems_solved"] = req.body["flags"];
+  } else if (
+    referer.includes("submission-form-security") &&
+    (new Date(req.session.user["quizs"]["cyber"]["starting_time"]) -
+      new Date()) /
+      (1000 * 60) <=
+      req.session.user["quizs"]["cyber"]["duration_in_m"]
+  ) {
+    req.session.user["quizs"]["cyber"]["problems_solved"] = req.body["flags"];
+  } else if (
+    referer.includes("submission-form-ai") &&
+    (new Date(req.session.user["quizs"]["ai"]["starting_time"]) - new Date()) /
+      (1000 * 60) <=
+      req.session.user["quizs"]["ai"]["duration_in_m"]
+  ) {
+    req.session.user["quizs"]["ai"]["problems_solved"] = req.body["flags"];
   }
 
+  await save_user_data(req);
+
+  res.status(200).send("Request was successful!");
 });
 
 /* istanbul ignore next */

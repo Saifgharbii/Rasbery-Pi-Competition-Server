@@ -5,18 +5,44 @@
   "quizs": {
     "cyber": {
       "duration_in_m": 30,
-      "starting_time": 0,
-      "problems_solved": []
+      "starting_time": "2025-02-06T00:09:38.084Z",
+      "problems_solved": [
+        {
+          "challenge": "cyber-0",
+          "answer": "sdsq"
+        },
+        {
+          "challenge": "cyber-1",
+          "answer": "sqdq"
+        },
+        {
+          "challenge": "cyber-2",
+          "answer": "80"
+        }
+      ]
     },
     "ai": {
       "duration_in_m": 30,
-      "starting_time": "2025-02-05T23:36:22.347Z",
+      "starting_time": 0,
       "problems_solved": []
     },
     "rasbari": {
       "duration_in_m": 30,
-      "starting_time": "2025-02-05T23:24:48.531Z",
-      "problems_solved": []
+      "starting_time": "2025-02-05T23:53:11.577Z",
+      "problems_solved": [
+        {
+          "challenge": "ras-0",
+          "answer": "sqdsq"
+        },
+        {
+          "challenge": "ras-1",
+          "answer": "sqdsq"
+        },
+        {
+          "challenge": "ras-2",
+          "answer": "443"
+        }
+      ]
     }
   }
 }
