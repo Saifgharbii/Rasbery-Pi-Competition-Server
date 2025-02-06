@@ -143,7 +143,7 @@ app.get("/submission-form-security", function (req, res) {
     return;
   }
   if (is_time_up_cyber(req, res)) {
-    res.redirect("/");
+    res.redirect("/result_cyber");
     return;
   }
 
@@ -161,9 +161,10 @@ app.get("/submission-form-rasbery-generalities", function (req, res) {
   }
 
   if (is_time_up_ras(req, res)) {
-    res.redirect("/");
+    res.redirect("/result_ras");
     return;
   }
+
   updatetime(req, "rasbari");
   res.render("submission-form-rasbery-generalities", {
     duration_ras: req.session.user.quizs.rasbari.duration_in_m,
@@ -176,8 +177,9 @@ app.get("/submission-form-ai", async function (req, res) {
     res.redirect("/");
     return;
   }
+
   if (is_time_up_ai(req, res)) {
-    res.redirect("/");
+    res.redirect("/result_ai");
     return;
   }
   await updatetime(req, "ai");
@@ -207,7 +209,8 @@ app.post("/save", async function (req, res) {
       req.body["flags"]
     );
     req.session.user["quizs"]["rasbari"]["score"] = Math.max(
-      req.session.user["quizs"]["rasbari"]["score"]
+      req.session.user["quizs"]["rasbari"]["score"],
+      req.session.user["quizs"]["cyber"]["last_score"]
     );
     save_score_board_ras(req);
   } else if (
@@ -306,7 +309,7 @@ app.get("/result_ai", async function (req, res) {
 
 function is_time_up_ai(req, res, extra = 0) {
   if (req.session.user["quizs"]["ai"]["starting_time"] == 0) {
-    res.locals.is_time_up_cyber = false;
+    res.locals.is_time_up_ai = false;
   } else {
     res.locals.is_time_up_ai =
       (new Date() -

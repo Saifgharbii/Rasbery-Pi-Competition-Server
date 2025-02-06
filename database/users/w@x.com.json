@@ -1,0 +1,40 @@
+{
+  "email": "w@x.com",
+  "username": "w",
+  "quizs": {
+    "cyber": {
+      "duration_in_m": 30,
+      "starting_time": 0,
+      "problems_solved": [],
+      "score": 0,
+      "last_score": 100
+    },
+    "ai": {
+      "duration_in_m": 30,
+      "starting_time": 0,
+      "problems_solved": [],
+      "score": 0,
+      "last_score": 0
+    },
+    "rasbari": {
+      "duration_in_m": 30,
+      "starting_time": "2025-02-06T18:43:51.275Z",
+      "problems_solved": [
+        {
+          "challenge": 0,
+          "answer": "wee"
+        },
+        {
+          "challenge": 1,
+          "answer": "wee"
+        },
+        {
+          "challenge": 2,
+          "answer": "80"
+        }
+      ],
+      "score": 100,
+      "last_score": 0
+    }
+  }
+}
