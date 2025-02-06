@@ -4,11 +4,10 @@ const path = require("path");
 user_data_struct = {
   email: "",
   username: "",
-  score: 0,
   quizs: {
-    cyber: { duration_in_m: 30, starting_time: 0, problems_solved: [] },
-    ai: { duration_in_m: 30, starting_time: 0, problems_solved: [] },
-    rasbari: { duration_in_m: 30, starting_time: 0, problems_solved: [] },
+    cyber: { duration_in_m: 30, starting_time: 0, problems_solved: [], score:0, last_score:0 },
+    ai: { duration_in_m: 30, starting_time: 0, problems_solved: [], score:0, last_score:0  },
+    rasbari: { duration_in_m: 30, starting_time: 0, problems_solved: [], score:0, last_score:0  },
   },
 };
 

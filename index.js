@@ -12,6 +12,11 @@ const ai_challenges = require("./src/challenges_ai");
 const ras_challenges = require("./src/challenges_ras");
 const cyber_challenges = require("./src/challenges_cyber");
 const save_user_data = require("./src/save_user_data");
+const calculate_score = require("./src/calculate_score");
+
+let ras_score_board = {};
+let ai_score_board = {};
+let cyber_score_board = {};
 
 // config
 app.use(
@@ -128,6 +133,7 @@ app.get(["/explore", "/", "home"], function (req, res) {
     return;
   }
 
+  refreashtimersandscoreboards(req, res);
   res.render("competition-selection");
 });
 
@@ -136,6 +142,11 @@ app.get("/submission-form-security", function (req, res) {
     res.redirect("/");
     return;
   }
+  if (is_time_up_cyber(req, res)) {
+    res.redirect("/");
+    return;
+  }
+
   updatetime(req, "cyber");
   res.render("submission-form-security", {
     duration_sec: req.session.user.quizs.cyber.duration_in_m,
@@ -145,6 +156,11 @@ app.get("/submission-form-security", function (req, res) {
 
 app.get("/submission-form-rasbery-generalities", function (req, res) {
   if (!req.session.user) {
+    res.redirect("/");
+    return;
+  }
+
+  if (is_time_up_ras(req, res)) {
     res.redirect("/");
     return;
   }
@@ -160,6 +176,10 @@ app.get("/submission-form-ai", async function (req, res) {
     res.redirect("/");
     return;
   }
+  if (is_time_up_ai(req, res)) {
+    res.redirect("/");
+    return;
+  }
   await updatetime(req, "ai");
 
   res.render("submission-form-ai", {
@@ -168,6 +188,7 @@ app.get("/submission-form-ai", async function (req, res) {
   });
 });
 
+/////////////// save
 app.post("/save", async function (req, res) {
   if (!req.session.user) {
     res.redirect("/");
@@ -175,37 +196,234 @@ app.post("/save", async function (req, res) {
   }
 
   const referer = req.get("Referer") || req.get("Origin");
-  console.log(req.body, referer);
 
   if (
     referer.includes("submission-form-rasbery-generalities") &&
-    (new Date(req.session.user["quizs"]["rasbari"]["starting_time"]) -
-      new Date()) /
-      (1000 * 60) <=
-      req.session.user["quizs"]["rasbari"]["duration_in_m"]
+    !is_time_up_ras(req, res, 2)
   ) {
     req.session.user["quizs"]["rasbari"]["problems_solved"] = req.body["flags"];
+    req.session.user["quizs"]["cyber"]["last_score"] = calculate_score(
+      ras_challenges,
+      req.body["flags"]
+    );
+    req.session.user["quizs"]["rasbari"]["score"] = Math.max(
+      req.session.user["quizs"]["rasbari"]["score"]
+    );
+    save_score_board_ras(req);
   } else if (
     referer.includes("submission-form-security") &&
-    (new Date(req.session.user["quizs"]["cyber"]["starting_time"]) -
-      new Date()) /
-      (1000 * 60) <=
-      req.session.user["quizs"]["cyber"]["duration_in_m"]
+    !is_time_up_ras(req, res, 2)
   ) {
     req.session.user["quizs"]["cyber"]["problems_solved"] = req.body["flags"];
+    req.session.user["quizs"]["cyber"]["last_score"] = calculate_score(
+      cyber_challenges,
+      req.body["flags"]
+    );
+    req.session.user["quizs"]["cyber"]["score"] = Math.max(
+      req.session.user["quizs"]["cyber"]["score"],
+      req.session.user["quizs"]["cyber"]["last_score"]
+    );
+    save_score_board_cyber(req);
   } else if (
     referer.includes("submission-form-ai") &&
-    (new Date(req.session.user["quizs"]["ai"]["starting_time"]) - new Date()) /
-      (1000 * 60) <=
-      req.session.user["quizs"]["ai"]["duration_in_m"]
+    !is_time_up_ras(req, res, 2)
   ) {
     req.session.user["quizs"]["ai"]["problems_solved"] = req.body["flags"];
+    req.session.user["quizs"]["cyber"]["last_score"] = calculate_score(
+      ai_challenges,
+      req.body["flags"]
+    );
+    req.session.user["quizs"]["ai"]["score"] = Math.max(
+      req.session.user["quizs"]["ai"]["score"],
+      req.session.user["quizs"]["cyber"]["last_score"]
+    );
+    save_score_board_ai(req);
   }
 
   await save_user_data(req);
+  console.log(req.session.user);
 
   res.status(200).send("Request was successful!");
 });
+
+app.get("/result", async function (req, res) {
+  const referer = req.get("Referer") || req.get("Origin");
+  if (referer.includes("submission-form-rasbery-generalities")) {
+    res.redirect("/result_ras");
+  } else if (referer.includes("submission-form-security")) {
+    res.redirect("/result_cyber");
+  } else if (referer.includes("submission-form-ai")) {
+    res.redirect("/result_ai");
+  } else {
+    res.redirect("/");
+  }
+});
+
+////////////////////// results
+app.get("/result_ras", async function (req, res) {
+  if (!req.session.user) {
+    res.redirect("/");
+    return;
+  }
+
+  is_time_up_ras(req, res);
+  res.render("score-board-generalities", {
+    score: req.session.user["quizs"]["cyber"]["last_score"],
+    userData: Object.values(ras_score_board),
+    email: req.session.user["email"],
+  });
+});
+
+app.get("/result_cyber", async function (req, res) {
+  if (!req.session.user) {
+    res.redirect("/");
+    return;
+  }
+
+  is_time_up_cyber(req, res);
+  res.render("score-board-security", {
+    score: req.session.user["quizs"]["cyber"]["last_score"],
+    userData: Object.values(ras_score_board),
+    email: req.session.user["email"],
+  });
+});
+
+app.get("/result_ai", async function (req, res) {
+  if (!req.session.user) {
+    res.redirect("/");
+    return;
+  }
+
+  is_time_up_ai(req, res);
+  res.render("score-board-ai", {
+    score: req.session.user["quizs"]["cyber"]["last_score"],
+    userData: Object.values(ras_score_board),
+    email: req.session.user["email"],
+  });
+});
+
+//////shit timers
+
+function is_time_up_ai(req, res, extra = 0) {
+  if (req.session.user["quizs"]["ai"]["starting_time"] == 0) {
+    res.locals.is_time_up_cyber = false;
+  } else {
+    res.locals.is_time_up_ai =
+      (new Date() -
+        new Date(req.session.user["quizs"]["ai"]["starting_time"])) /
+        (1000 * 60) +
+        extra >
+      req.session.user["quizs"]["ai"]["duration_in_m"];
+  }
+  return res.locals.is_time_up_ai;
+}
+
+function is_time_up_cyber(req, res, extra = 0) {
+  if (req.session.user["quizs"]["cyber"]["starting_time"] == 0) {
+    res.locals.is_time_up_cyber = false;
+  } else {
+    res.locals.is_time_up_cyber =
+      (new Date() -
+        new Date(req.session.user["quizs"]["cyber"]["starting_time"])) /
+        (1000 * 60) +
+        extra >
+      req.session.user["quizs"]["cyber"]["duration_in_m"];
+  }
+  return res.locals.is_time_up_cyber;
+}
+
+function is_time_up_ras(req, res, extra = 0) {
+  if (req.session.user["quizs"]["rasbari"]["starting_time"] == 0) {
+    res.locals.is_time_up_ras = false;
+  } else {
+    res.locals.is_time_up_ras =
+      (new Date() -
+        new Date(req.session.user["quizs"]["rasbari"]["starting_time"])) /
+        (1000 * 60) +
+        extra >
+      req.session.user["quizs"]["rasbari"]["duration_in_m"];
+  }
+
+  return res.locals.is_time_up_ras;
+}
+
+////////////////save score
+function save_score_board_ras(req) {
+  let differenceInMilliseconds =
+    new Date() -
+    new Date(req.session.user["quizs"]["rasbari"]["starting_time"]);
+  differenceInMilliseconds = Math.min(
+    req.session.user["quizs"]["rasbari"]["duration_in_m"] * 60 * 1000,
+    differenceInMilliseconds
+  );
+  const differenceInSeconds = Math.floor(differenceInMilliseconds / 1000);
+  const minutes = Math.floor(differenceInSeconds / 60);
+  const seconds = differenceInSeconds % 60;
+  const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+  ras_score_board[req.session.user["email"]] = {
+    email: req.session.user["email"],
+    username: req.session.user["username"],
+    score: req.session.user["quizs"]["rasbari"]["score"],
+    timeTaken: formattedTime,
+  };
+}
+function save_score_board_ai(req) {
+  let differenceInMilliseconds =
+    new Date() - new Date(req.session.user["quizs"]["ai"]["starting_time"]);
+  differenceInMilliseconds = Math.min(
+    req.session.user["quizs"]["ai"]["duration_in_m"] * 60 * 1000,
+    differenceInMilliseconds
+  );
+
+  const differenceInSeconds = Math.floor(differenceInMilliseconds / 1000);
+
+  const minutes = Math.floor(differenceInSeconds / 60);
+
+  const seconds = differenceInSeconds % 60;
+
+  const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+  ai_score_board[req.session.user["email"]] = {
+    email: req.session.user["email"],
+    username: req.session.user["username"],
+    score: req.session.user["quizs"]["ai"]["score"],
+    timeTaken: formattedTime,
+  };
+}
+function save_score_board_cyber(req) {
+  let differenceInMilliseconds =
+    new Date() - new Date(req.session.user["quizs"]["cyber"]["starting_time"]);
+
+  differenceInMilliseconds = Math.min(
+    req.session.user["quizs"]["cyber"]["duration_in_m"] * 60 * 1000,
+    differenceInMilliseconds
+  );
+
+  const differenceInSeconds = Math.floor(differenceInMilliseconds / 1000);
+
+  const minutes = Math.floor(differenceInSeconds / 60);
+
+  const seconds = differenceInSeconds % 60;
+
+  const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+  cyber_score_board[req.session.user["email"]] = {
+    email: req.session.user["email"],
+    username: req.session.user["username"],
+    score: req.session.user["quizs"]["cyber"]["score"],
+    timeTaken: formattedTime,
+  };
+}
+
+function refreashtimersandscoreboards(req, res) {
+  is_time_up_ras(req, res);
+  is_time_up_ai(req, res);
+  is_time_up_cyber(req, res);
+  save_score_board_ras(req);
+  save_score_board_cyber(req);
+  save_score_board_ai(req);
+}
 
 /* istanbul ignore next */
 if (!module.main) {

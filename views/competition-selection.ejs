@@ -183,21 +183,34 @@
         <div class="competition-card green">
             <h2>Raspberry Pi Generalities</h2>
             <p>Learn the basics of Raspberry Pi and its applications.</p>
-            <button onclick="location.href='/submission-form-rasbery-generalities'">Start</button>
+            <% if (is_time_up_ras) { %>
+                <button onclick="location.href='/result_ras'">Result</button>
+            <% } else { %>
+                <button onclick="location.href='/submission-form-rasbery-generalities'">Start</button>
+            <% } %>
+
         </div>
 
         <!-- Raspberry Pi Security (Red) -->
         <div class="competition-card red">
             <h2>Raspberry Pi Security</h2>
             <p>Explore security practices and vulnerabilities in Raspberry Pi.</p>
-            <button onclick="location.href='/submission-form-security'">Start</button>
+            <% if (is_time_up_ras) { %>
+                <button onclick="location.href='/result_cyber'">Result</button>
+            <% } else { %>
+                <button onclick="location.href='/submission-form-security'">Start</button>
+            <% } %>
         </div>
 
         <!-- AI in Raspberry Pi (Blue) -->
         <div class="competition-card blue">
             <h2>Artificial Intelligence in Raspberry Pi</h2>
             <p>Discover how to implement AI on Raspberry Pi.</p>
-            <button onclick="location.href='/submission-form-ai'">Start</button>
+            <% if (is_time_up_ras) { %>
+                <button onclick="location.href='/result_ai'">Result</button>
+            <% } else { %>
+                <button onclick="location.href='/submission-form-ai'">Start</button>
+            <% } %>
         </div>
     </div>
 </body>

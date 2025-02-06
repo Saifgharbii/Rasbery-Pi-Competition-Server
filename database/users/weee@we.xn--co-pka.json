@@ -1,12 +1,13 @@
 {
-  "email": "w@x.com",
-  "username": "w",
+  "email": "weee@we.xn--co-pka",
+  "username": "ds",
   "quizs": {
     "cyber": {
       "duration_in_m": 30,
       "starting_time": 0,
       "problems_solved": [],
-      "score": 0
+      "score": 0,
+      "last_score": 67
     },
     "ai": {
       "duration_in_m": 30,
@@ -16,22 +17,22 @@
     },
     "rasbari": {
       "duration_in_m": 30,
-      "starting_time": "2025-02-06T02:09:06.803Z",
+      "starting_time": "2025-02-06T03:43:32.202Z",
       "problems_solved": [
         {
           "challenge": 0,
-          "answer": "sqdsq"
+          "answer": "weesqds"
         },
         {
           "challenge": 1,
-          "answer": "sqdsq"
+          "answer": "wee"
         },
         {
           "challenge": 2,
           "answer": "80"
         }
       ],
-      "score": 30
+      "score": 100
     }
   }
 }

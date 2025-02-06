@@ -1,0 +1,28 @@
+<script>
+  // Fake Data for Prototyping
+  const _userData = <%- JSON.stringify(userData, null, 2) %>;
+
+  // Populate Scoreboard
+  const scoreboardBody = document.getElementById("scoreboardBody");
+  _userData.sort(
+    (a, b) => b.score - a.score || a.timeTaken.localeCompare(b.timeTaken)
+  ); // Sort by score, then by time
+
+  _userData.forEach((entry, index) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${entry.username}</td>
+            <td>${entry.score}</td>
+            <td>${entry.timeTaken}</td>
+        `;
+
+    // Add a special class if this row belongs to the current user
+    if (entry.email === "<%- email %>") {
+      row.classList.add("current-user");
+      // document.getElementById('scoreValue').textContent = entry.score;
+    }
+
+    scoreboardBody.appendChild(row);
+  });
+</script>

@@ -15,8 +15,8 @@ ras_challenges = [
     title: "Cyber Security",
     description: "What port does HTTPS typically use?",
     type: "select",
-    options: ["80", "443", "20"],
-    solution: "wee",
+    options: ["Select Correct Answer","80", "443", "20"],
+    solution: "80",
   },
 ];
 
