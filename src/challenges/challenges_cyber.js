@@ -296,18 +296,6 @@ cyber_challenges = [
       "A way to encrypt passwords"
     ],
     "solution": "Intercepting communication between two parties"
-  },
-  {
-    title: "Challenge 3",
-    description: "the HASH is the flag!",
-    type: "input",
-    solution: "90daa24e7c9c2d42b3d09604d825132f05d741cf499dc93a7f1afe31409a1394",
-  },
-  {
-    title: "Challenge 4",
-    description: "Some files might be hidden, you should consider using something like ...",
-    type: "input",
-    solution: "PICTF{hidden_in_plain_sight}",
   }
 ]
 
