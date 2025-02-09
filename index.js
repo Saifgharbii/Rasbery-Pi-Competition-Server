@@ -66,10 +66,13 @@ app.use(
     },
   })
 );
+
+
 app.use((req, res, next) => {
-  res.setHeader('bypass-tunnel-reminder', '*'); // Set any value you want
+  res.setHeader('bypass-tunnel-reminder', 'any-value'); // Set any value you want
   next();
 });
+
 // View engine setup
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -112,6 +115,8 @@ function restrict(req, res, next) {
     res.redirect("/signin");
   }
 }
+
+
 
 app.get('/reload', (req, res) => {
   const result = reloadAllModules();
