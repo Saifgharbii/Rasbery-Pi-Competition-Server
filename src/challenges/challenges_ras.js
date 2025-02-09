@@ -1,31 +1,5 @@
 ras_challenges = [
   {
-    title: "Raspberry Pi Operating System",
-    description: "Name one operating system that can be run on a Raspberry Pi?",
-    type: "input",
-    solution: "Raspberry Pi OS",
-  },
-  {
-    title: "Programming Languages",
-    description: "Name one programming language that is used with Raspberry Pi",
-    type: "input",
-    solution: "Python",
-  },
-  {
-    title: "Raspberry Pi Connectivity",
-    description:
-      "Name one method of connectivity supported by the Raspberry Pi.",
-    type: "input",
-    solution: "Wifi",
-  },
-  {
-    title: "GPIO Purpose",
-    description:
-      "What is the main purpose of the GPIO pins on the Raspberry Pi?",
-    type: "input",
-    solution: "connecting electronic components",
-  },
-  {
     title: "Raspberry Pi Imager OS",
     description:
       "Name one of the operating systems that can be selected using Raspberry Pi Imager.",
@@ -338,18 +312,6 @@ ras_challenges = [
     solution: "Write the output of a command into a file",
   },
   {
-    title: "File Permissions: chmod 755",
-    description: "What does the linux command 'chmod 755' do?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Make a file executable",
-      "Give read/write/execute to owner, read/execute to others",
-      "Change ownership of a file",
-    ],
-    solution: "Give read/write/execute to owner, read/execute to others",
-  },
-  {
     title: "File Permissions: sudo chown",
     description: "What does the linux command 'sudo chown' do?",
     type: "select",
@@ -361,5 +323,86 @@ ras_challenges = [
     ],
     solution: "Change ownership of a file",
   },
+  {
+    title: "Challenge 1",
+    description: "The most important takeaway from this challenge is using nano",
+    type: "input",
+    solution: "PICTF{welc0me_t0_ctfs}",
+  },
+  {
+    title: "Challenge 2",
+    description: "moving through directories",
+    type: "input",
+    solution: "CTF{m0v1ng_thr0ugh_d1r3ct0r13s}",
+  },
+  {
+    title: "Challenge 5",
+    description: "servers code can't be encrypted",
+    type: "input",
+    solution: "PICTF{web_servers_are_cool2}",
+  },
+  {
+    "title": "challenge 6:LED GPIO Setup",
+    "description": "There's a mistake in the GPIO setup. Find the incorrect line and submit it.",
+    "type": "input",
+    "solution": "GPIO.setup(18, GPIO.IN)"
+  },
+  {
+    "title": "challenge 7:Flask Port Issue",
+    "description": "The Flask server didn't run. Find the incorrect line and submit it.",
+    "type": "input",
+    "solution": "app.run(host=\"0.0.0.0\", port=-500)"
+  },
+  {
+    "title": "challenge 8:Missing GPIO Cleanup",
+    "description": "High electricity Bill!!!!. Find the mistake and submit it.",
+    "type": "input",
+    "solution": "GPIO.output(18, GPIO.HIGH)"
+  },
+  {
+      "title": "challenge 9:Wrong GPIO",
+      "description": "Hmmm why did it not run. Find the incorrect line.",
+      "type": "input",
+      "solution": "if pin = 18:"
+  },
+  {
+      "title": "challenge 10:Flask Security Risk",
+      "description": "Running Flask in debug mode in production is risky. Find the incorrect line.",
+      "type": "input",
+      "solution": "app.run(host='0.0.0.0', port=5000, debug=True)"
+  },{
+    "title": "challenge 11: Executing Obfuscated Bash Script",
+    "description": "Running an obfuscated Bash script can pose security risks. Identify the incorrect practice in the following scenario.",
+    "type": "input",
+    "solution": "RAS{an_extremly_long_flag_that_you_cant_write_without_getting_angry}"
+},{
+  "title": "challenge 12: Executing Obfuscated Bash Script2",
+  "description": "Running an obfuscated Bash script can pose security risks. Identify the incorrect practice in the following scenario.",
+  "type": "input",
+  "solution": "RAS{QBPxbm0f0wqfnoz0olmd0eobd0wkbw0zlv00bmw0tqjwf0tjwklvw0dfwwjmd0bmdqz10}"
+},
+  {
+      "title": "challenge 12:Flask Security Risk",
+      "description": "Running Flask in debug mode in production is risky. Find the incorrect line.",
+      "type": "input",
+      "solution": "app.run(host='0.0.0.0', port=5000, debug=True)"
+  },
+  {
+      "title": "challenge 13:LEDs Sequence",
+      "description": "The LEDs are blinking in a sequence, analyze the code and find sequence. the input should be like this format: 12345 ",
+      "type": "input",
+      "solution": "14642136"
+  },
+  {
+      "title": "challenge 13:Close the Light!!!",
+      "description": "The sequence keeps some leds on, help your father know which led is on. the input should be sorted this format: 12345 ",
+      "type": "input",
+      "solution": "1346"
+  },{
+    "title": "challenge 15: Changing Ownership and Executing a Script",
+    "description": "Changing the owner of a script and executing it can have security implications. Identify the incorrect practice in the following scenario.",
+    "type": "input",
+    "solution": "RAS{UFT0fiXb0subjk0Xkhi0Xakf0XsofsX0hrXdfisXpunsbXpnsohrsX0bssni0Xfi0u05z}"
+}
 ];
 module.exports = ras_challenges;

@@ -3,9 +3,9 @@
       <div class="col-md-6 mb-4">
         <h4 class="text-danger">
           <% if (challenge.type === 'input') { %>
-            FLAG 0<%= index + 1 %>: <%= challenge.title %>
+            <%= challenge.title %>
           <% } else { %>
-            QUIZ 0<%= index + 1 %>: <%= challenge.title %>
+            QUIZ: <%= challenge.title %>
           <% } %>
         </h4>
         <p><%= challenge.description %></p>

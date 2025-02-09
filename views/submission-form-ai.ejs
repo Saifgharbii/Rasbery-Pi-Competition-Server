@@ -69,8 +69,8 @@
       /* Timer Styles */
       #timer {
         position: fixed;
-        top: 5px;
-        left: 50%;
+        top: 30px;
+        left: 85%;
         transform: translateX(-50%);
         font-size: 2rem;
         font-weight: bold;
@@ -133,6 +133,13 @@
         transform: translateY(-5px);
         box-shadow: var(--neon-glow-blue);
       }
+
+.nav-images img {width: 135px;height: 60px;
+  object-fit: cover;
+  border: 2px solid var(--cyber-blue);
+  box-shadow: var(--neon-glow-blue);
+  border-radius: 5px;
+}
 
       .cyber-input {
         background: #111 !important;
@@ -221,6 +228,8 @@
     <nav class="navbar navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/">RAS CAMP</a>
+
+        <%- include('images') -%>
         <!-- Timer Display -->
         <div id="timer">00:00</div>
         <span class="text-danger"

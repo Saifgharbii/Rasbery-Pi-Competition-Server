@@ -5,8 +5,8 @@ user_data_struct = {
   email: "",
   username: "",
   quizs: {
-    cyber: { duration_in_m: 30, starting_time: 0, problems_solved: [], score:0, last_score:0 },
-    ai: { duration_in_m: 30, starting_time: 0, problems_solved: [], score:0, last_score:0  },
+    cyber: { duration_in_m: 15, starting_time: 0, problems_solved: [], score:0, last_score:0 },
+    ai: { duration_in_m: 15, starting_time: 0, problems_solved: [], score:0, last_score:0  },
     ras: { duration_in_m: 30, starting_time: 0, problems_solved: [], score:0, last_score:0  },
   },
 };

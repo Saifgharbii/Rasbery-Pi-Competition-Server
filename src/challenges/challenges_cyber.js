@@ -1,300 +1,314 @@
 cyber_challenges = [
   {
-    title: "Linux Command: pwd",
-    description: "What does the command 'pwd' do?",
-    type: "select",
-    options: [
+    "title": "Cyber Security",
+    "description": "What is cybersecurity?",
+    "type": "select",
+    "options": [
       "Select Correct Answer",
-      "Print working directory",
-      "List files and folders",
-      "Change file permissions",
+      "Protecting computer systems from physical damage",
+      "Protecting software and networks from threats",
+      "Improving computer performance"
     ],
-    solution: "Print working directory",
+    "solution": "Protecting software and networks from threats"
   },
   {
-    title: "Linux Command: ls",
-    description: "What does the basic Linux command 'ls' do?",
-    type: "select",
-    options: [
+    "title": "Cyber Security",
+    "description": "What are the three components of the CIA triad?",
+    "type": "select",
+    "options": [
       "Select Correct Answer",
-      "Show current directory",
-      "List files and folders",
-      "Make a file executable",
-    ],
-    solution: "List files and folders",
-  },
-  {
-    title: "Basic Linux Command: chmod",
-    description:
-      "What is the purpose of the Linux command 'chmod +x script.py'?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Make a file executable",
-      "Print working directory",
-      "Delete a file",
-    ],
-    solution: "Make a file executable",
-  },
-  {
-    title: "Cybersecurity Focus",
-    description:
-      "What is a primary focus of cybersecurity according to the source?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Protecting code",
-      "Network sniffing",
-      "Protecting messages",
-      "All of the above",
-    ],
-    solution: "All of the above",
-  },
-  {
-    title: "CIA Triad",
-    description:
-      "The source mentions the CIA Triad, what does CIA stand for in this context?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
+      "Cybersecurity, Internet, Access",
       "Confidentiality, Integrity, Availability",
-      "Control, Identify, Access",
-      "Copy, Install, Apply",
-      "Central, Integrated, Autonomous",
+      "Coding, Intelligence, Authentication"
     ],
-    solution: "Confidentiality, Integrity, Availability",
+    "solution": "Confidentiality, Integrity, Availability"
   },
   {
-    title: "Code Obfuscation Tool",
-    description:
-      "What is the name of the tool mentioned for obfuscating Python scripts?",
-    type: "select",
-    options: [
+    "title": "Cyber Security",
+    "description": "What is an IoT device?",
+    "type": "select",
+    "options": [
       "Select Correct Answer",
-      "Ghidra",
+      "A device that can be remotely controlled",
+      "A device that operates only offline",
+      "A device that does not need software to function"
+    ],
+    "solution": "A device that can be remotely controlled"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "Why is security considered a feature?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Because it must be designed into a system from the start",
+      "Because it is optional in software development",
+      "Because it is only needed for financial applications"
+    ],
+    "solution": "Because it must be designed into a system from the start"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "What is the difference between software protection and network protection?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Software protection secures code, while network protection secures communication",
+      "They are the same thing",
+      "Network protection only involves firewalls"
+    ],
+    "solution": "Software protection secures code, while network protection secures communication"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "What is code obfuscation?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Making code harder to read",
+      "Encrypting code with a password",
+      "Removing comments from the code"
+    ],
+    "solution": "Making code harder to read"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "How does obfuscation help in software protection?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "It prevents unauthorized users from easily understanding the code",
+      "It makes software faster",
+      "It hides software bugs"
+    ],
+    "solution": "It prevents unauthorized users from easily understanding the code"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "What is PyArmor used for?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Encrypting network traffic",
+      "Obfuscating Python scripts",
+      "Cracking passwords"
+    ],
+    "solution": "Obfuscating Python scripts"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "What is hashing?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Converting data into a fixed-length string",
+      "Encrypting a file",
+      "Compressing a file"
+    ],
+    "solution": "Converting data into a fixed-length string"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "Name three common hashing algorithms.",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "SHA-256, MD5, Keccak",
+      "AES, RSA, SHA-1",
+      "ECC, DES, Blowfish"
+    ],
+    "solution": "SHA-256, MD5, Keccak"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "Why is hashing considered secure?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Because it cannot be reversed easily",
+      "Because it encrypts data",
+      "Because it is fast"
+    ],
+    "solution": "Because it cannot be reversed easily"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "What tool is commonly used for password cracking?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Wireshark",
+      "Hashcat",
+      "PyArmor"
+    ],
+    "solution": "Hashcat"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "What is symmetric encryption?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Encryption using one key",
+      "Encryption using two keys",
+      "A type of hashing"
+    ],
+    "solution": "Encryption using one key"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "What is asymmetric encryption?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Encryption using one key",
+      "Encryption using two keys",
+      "A method for compressing data"
+    ],
+    "solution": "Encryption using two keys"
+  },
+ {
+    "title": "Cyber Security",
+    "description": "Why is hashing considered secure?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Because it encrypts data",
+      "Because it cannot be cracked",
+      "Because it is computationally hard to reverse",
+      "Because it can be decrypted only with a key"
+    ],
+    "solution": "Because it is computationally hard to reverse"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "Can hashing be reversed? Why or why not?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "No, because it is a one-way function",
+      "Yes, by using a secret key",
+      "Yes, by using enough computing power",
+      "No, because it is encrypted"
+    ],
+    "solution": "No, because it is a one-way function"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "What is the main difference between hashing and encryption?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Encryption can be reversed; hashing cannot",
+      "Hashing requires a key; encryption does not",
+      "Hashing is used for communication, encryption for storage",
+      "There is no difference"
+    ],
+    "solution": "Encryption can be reversed; hashing cannot"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "What tool is commonly used for password cracking?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
       "Hashcat",
       "PyArmor",
       "Wireshark",
+      "PyCrack"
     ],
-    solution: "PyArmor",
+    "solution": "Hashcat"
   },
   {
-    title: "Hashing Input and Output",
-    description:
-      "What will you get with the same input when hashing according to the source?",
-    type: "select",
-    options: [
+    "title": "Cyber Security",
+    "description": "How does Hashcat work?",
+    "type": "select",
+    "options": [
       "Select Correct Answer",
-      "Different output",
-      "The same output",
-      "No output",
-      "An error",
+      "By using brute-force and wordlists",
+      "By encrypting passwords",
+      "By guessing passwords randomly",
+      "By storing passwords securely"
     ],
-    solution: "The same output",
+    "solution": "By using brute-force and wordlists"
   },
   {
-    title: "Reverse Engineering Tools",
-    description:
-      "Name a tool used for reverse engineering, as mentioned in the source?",
-    type: "select",
-    options: [
+    "title": "Cyber Security",
+    "description": "What is a wordlist, and how is it used in password cracking?",
+    "type": "select",
+    "options": [
       "Select Correct Answer",
-      "PyArmor",
-      "Hashcat",
-      "Rockyou",
-      "Ghidra",
+      "A list of common passwords used to guess credentials",
+      "A file used to encrypt passwords",
+      "A tool for storing secure passwords",
+      "A way to generate strong passwords"
     ],
-    solution: "Ghidra",
+    "solution": "A list of common passwords used to guess credentials"
   },
   {
-    title: "Password Cracking Tool",
-    description: "What tool was mentioned for cracking passwords?",
-    type: "select",
-    options: [
+    "title": "Cyber Security",
+    "description": "What is encryption?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "A method to convert data into an unreadable format",
+      "A way to speed up a network",
+      "A process of storing passwords",
+      "A form of hacking"
+    ],
+    "solution": "A method to convert data into an unreadable format"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "What is network sniffing?",
+    "type": "select",
+    "options": [
+      "Select Correct Answer",
+      "Capturing and analyzing network traffic",
+      "Encrypting network data",
+      "Preventing cyber attacks",
+      "A method to create secure passwords"
+    ],
+    "solution": "Capturing and analyzing network traffic"
+  },
+  {
+    "title": "Cyber Security",
+    "description": "Name a tool used for network sniffing.",
+    "type": "select",
+    "options": [
       "Select Correct Answer",
       "Wireshark",
       "Hashcat",
       "PyArmor",
-      "Ida pro",
+      "RSA"
     ],
-    solution: "Hashcat",
+    "solution": "Wireshark"
   },
   {
-    title: "Rockyou's Limitation",
-    description: "What is the limitation of Rockyou according to the source?",
-    type: "select",
-    options: [
+    "title": "Cyber Security",
+    "description": "What is a Man-in-the-Middle (MITM) attack?",
+    "type": "select",
+    "options": [
       "Select Correct Answer",
-      "It works for any password",
-      "It only works for complex passwords",
-      "It only works for simple passwords",
-      "It is an encryption tool",
+      "Intercepting communication between two parties",
+      "A way to secure data",
+      "A type of hashing",
+      "A way to encrypt passwords"
     ],
-    solution: "It only works for simple passwords",
+    "solution": "Intercepting communication between two parties"
   },
   {
-    title: "Network Security Threat",
-    description: "What network security threat was mentioned in the source?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Encryption",
-      "Obfuscation",
-      "Network sniffing",
-      "Hashing",
-    ],
-    solution: "Network sniffing",
+    title: "Challenge 3",
+    description: "the HASH is the flag!",
+    type: "input",
+    solution: "90daa24e7c9c2d42b3d09604d825132f05d741cf499dc93a7f1afe31409a1394",
   },
   {
-    title: "Man-in-the-Middle Attack Tool",
-    description: "What tool is mentioned in relation to MITM attacks?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Rockyou",
-      "Wireshark",
-      "Hashcat",
-      "PyArmor",
-    ],
-    solution: "Wireshark",
-  },
-  {
-    title: "Encryption Types",
-    description: "Which type of encryption is AES?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Asymmetric",
-      "Symmetric",
-      "Hashing",
-      "Obfuscation",
-    ],
-    solution: "Symmetric",
-  },
-  {
-    title: "Asymmetric Encryption Example",
-    description:
-      "Which encryption method from the source is an example of Asymmetric encryption?",
-    type: "select",
-    options: ["Select Correct Answer", "DES", "MD5", "RSA", "AES"],
-    solution: "RSA",
-  },
-  {
-    title: "Code Redistribution License",
-    description:
-      "The source mentions a license for code redistribution. What is it?",
-    type: "select",
-    options: ["Select Correct Answer", "MIT", "GNU", "New BSD", "Apache"],
-    solution: "New BSD",
-  },
-  {
-    title: "Code Obfuscation Technique",
-    description: "What technique is mentioned for obfuscating code?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Random Statements",
-      "Unnecessarily roundabout ways to write statements",
-      "Commenting out",
-      "Encryption",
-    ],
-    solution: "Unnecessarily roundabout ways to write statements",
-  },
-  {
-    title: "Security Principle",
-    description: "According to the sources, what is a key consideration?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Security is an afterthought",
-      "Security is a feature",
-      "Security is expensive",
-      "Security is optional",
-    ],
-    solution: "Security is a feature",
-  },
-  {
-    title: "Message Protection",
-    description: "Besides protecting code, what else should be protected?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Network connection",
-      "Messages sent between the pi and remote control",
-      "The power source",
-      "The hardware",
-    ],
-    solution: "Messages sent between the pi and remote control",
-  },
-  {
-    title: "Hashing Security",
-    description: "According to the source why is hashing considered secure?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Because humans get bored",
-      "Because machines get bored",
-      "Because it is an encryption method",
-      "Because it is reversible",
-    ],
-    solution: "Because machines get bored",
-  },
-  {
-    title: "Symmetric encryption",
-    description:
-      "What is a type of symmetric encryption mentioned in the source?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "RSA",
-      "ELLIPTIC CURVE",
-      "AES",
-      "SHA-256",
-    ],
-    solution: "AES",
-  },
-  {
-    title: "Hashing Output",
-    description:
-      "What type of output is given with the hashing algorithms in the source?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Random string",
-      "Fixed size string",
-      "A number",
-      "A word",
-    ],
-    solution: "Fixed size string",
-  },
-  {
-    title: "Python Protection",
-    description: "What type of code needs to be protected in the source?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "Java Code",
-      "HTML Code",
-      "Python Code",
-      "C++ Code",
-    ],
-    solution: "Python Code",
-  },
-  {
-    title: "BSD License",
-    description:
-      "What is permitted with the New BSD license according to the source?",
-    type: "select",
-    options: [
-      "Select Correct Answer",
-      "No changes allowed",
-      "Only binary allowed",
-      "Redistribution and use in source and binary forms, with or without modification are permitted",
-      "Only source allowed",
-    ],
-    solution:
-      "Redistribution and use in source and binary forms, with or without modification are permitted",
-  },
-];
+    title: "Challenge 4",
+    description: "Some files might be hidden, you should consider using something like ...",
+    type: "input",
+    solution: "PICTF{hidden_in_plain_sight}",
+  }
+]
 
 module.exports = cyber_challenges;

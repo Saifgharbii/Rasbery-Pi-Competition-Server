@@ -79,6 +79,13 @@
         max-width: 800px;
       }
 
+.nav-images img {width: 135px;height: 60px;
+  object-fit: cover;
+  border: 2px solid var(--cyber-blue);
+  box-shadow: var(--neon-glow-blue);
+  border-radius: 5px;
+}
+
       .cyber-card::after {
         content: "";
         position: absolute;
@@ -184,6 +191,8 @@
     <nav class="navbar navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/">RAS CAMP</a>
+
+        <%- include('images') -%>
         <span class="text-danger"
           >USER: <span id="usernameDisplay"><%- username -%></span></span
         >

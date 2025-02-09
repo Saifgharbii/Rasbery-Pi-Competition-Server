@@ -6,7 +6,7 @@ function calculate_score(quiz_challenges, user_response) {
     let challengeIndex = parseInt(response.challenge);
     if (
       quiz_challenges[challengeIndex] &&
-      quiz_challenges[challengeIndex].solution === response.answer
+      quiz_challenges[challengeIndex].solution === response.answer.trim().replace(/ /g, "")
     ) {
       correctAnswers++;
     }

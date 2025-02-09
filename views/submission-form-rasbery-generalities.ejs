@@ -69,8 +69,8 @@
       /* Timer Styles */
       #timer {
         position: fixed;
-        top: 5px;
-        left: 50%;
+        top: 30px;
+        left: 85%;
         transform: translateX(-50%);
         font-size: 2rem;
         font-weight: bold;
@@ -193,6 +193,13 @@
         box-shadow: var(--neon-glow-green);
       }
 
+.nav-images img {width: 135px;height: 60px;
+  object-fit: cover;
+  border: 2px solid var(--cyber-green);
+  box-shadow: var(--neon-glow-green);
+  border-radius: 5px;
+}
+
       .text-danger {
         color: var(--cyber-green) !important;
         height: 55px;
@@ -222,6 +229,8 @@
     <nav class="navbar navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/">RAS CAMP</a>
+
+        <%- include('images') -%>
         <!-- Timer Display -->
         <div id="timer">00:00</div>
         <span class="text-danger"
