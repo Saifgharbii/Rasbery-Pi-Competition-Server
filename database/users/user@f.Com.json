@@ -1,10 +1,10 @@
 {
-  "email": "sd@ddddd.D",
-  "username": "dsd",
+  "email": "user@f.Com",
+  "username": "user",
   "quizs": {
     "cyber": {
       "duration_in_m": 30,
-      "starting_time": "2025-02-09T04:30:04.045Z",
+      "starting_time": "2025-02-09T04:40:43.937Z",
       "problems_solved": [
         {
           "challenge": 0,
@@ -20,11 +20,11 @@
         }
       ],
       "score": 67,
-      "last_score": 100
+      "last_score": 67
     },
     "ai": {
       "duration_in_m": 30,
-      "starting_time": "2025-02-09T04:29:24.582Z",
+      "starting_time": "2025-02-09T04:40:50.197Z",
       "problems_solved": [
         {
           "challenge": 0,
@@ -40,19 +40,19 @@
         }
       ],
       "score": 100,
-      "last_score": 0
+      "last_score": 100
     },
     "ras": {
       "duration_in_m": 30,
-      "starting_time": "2025-02-09T04:29:51.641Z",
+      "starting_time": "2025-02-09T04:40:03.795Z",
       "problems_solved": [
         {
           "challenge": 0,
-          "answer": "weesds"
+          "answer": "weefgfd"
         },
         {
           "challenge": 1,
-          "answer": "weesqd"
+          "answer": "weedsf"
         },
         {
           "challenge": 2,
@@ -60,7 +60,7 @@
         }
       ],
       "score": 100,
-      "last_score": 0
+      "last_score": 33
     }
   }
 }
