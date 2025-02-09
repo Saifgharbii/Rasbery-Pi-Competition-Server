@@ -354,20 +354,6 @@ ras_challenges = [
     solution: "CTF{m0v1ng_thr0ugh_d1r3ct0r13s}",
   },
   {
-    title: "Challenge 3:",
-    description: "the HASH is the flag!",
-    type: "input",
-    solution:
-      "90daa24e7c9c2d42b3d09604d825132f05d741cf499dc93a7f1afe31409a1394",
-  },
-  {
-    title: "Challenge 4:",
-    description:
-      "Some files might be hidden, you should consider using something like ...",
-    type: "input",
-    solution: "PICTF{hidden_in_plain_sight}",
-  },
-  {
     title: "Challenge 5:",
     description: "servers code can't be encrypted",
     type: "input",
@@ -407,22 +393,6 @@ ras_challenges = [
     solution: "app.run(host='0.0.0.0', port=5000, debug=True)",
   },
   {
-    title: "challenge 11: Executing Obfuscated Bash Script",
-    description:
-      "Running an obfuscated Bash script can pose security risks. Identify the incorrect practice in the following scenario.",
-    type: "input",
-    solution:
-      "RAS{an_extremly_long_flag_that_you_cant_write_without_getting_angry}",
-  },
-  {
-    title: "challenge 12: Executing Obfuscated Bash Script2",
-    description:
-      "Running an obfuscated Bash script can pose security risks. Identify the incorrect practice in the following scenario.",
-    type: "input",
-    solution:
-      "RAS{QBPxbm0f0wqfnoz0olmd0eobd0wkbw0zlv00bmw0tqjwf0tjwklvw0dfwwjmd0bmdqz10}",
-  },
-  {
     title: "challenge 12:Flask Security Risk",
     description:
       "Running Flask in debug mode in production is risky. Find the incorrect line.",
@@ -442,14 +412,6 @@ ras_challenges = [
       "The sequence keeps some leds on, help your father know which led is on. the input should be sorted this format: 12345 ",
     type: "input",
     solution: "1346",
-  },
-  {
-    title: "challenge 15: Changing Ownership and Executing a Script",
-    description:
-      "Changing the owner of a script and executing it can have security implications. Identify the incorrect practice in the following scenario.",
-    type: "input",
-    solution:
-      "RAS{UFT0fiXb0subjk0Xkhi0Xakf0XsofsX0hrXdfisXpunsbXpnsohrsX0bssni0Xfi0u05z}",
-  },
+  }
 ];
 module.exports = ras_challenges;
