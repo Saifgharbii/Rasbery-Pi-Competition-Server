@@ -66,7 +66,10 @@ app.use(
     },
   })
 );
-
+app.use((req, res, next) => {
+  res.setHeader('bypass-tunnel-reminder', '*'); // Set any value you want
+  next();
+});
 // View engine setup
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
