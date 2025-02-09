@@ -1,0 +1,216 @@
+{
+  "email": "eya.chaniour2019@gmail.com",
+  "username": "eya cheniour",
+  "quizs": {
+    "cyber": {
+      "duration_in_m": 15,
+      "starting_time": 0,
+      "problems_solved": [],
+      "score": 0,
+      "last_score": 0
+    },
+    "ai": {
+      "duration_in_m": 15,
+      "starting_time": 0,
+      "problems_solved": [],
+      "score": 0,
+      "last_score": 0
+    },
+    "ras": {
+      "duration_in_m": 30,
+      "starting_time": "2025-02-09T16:32:14.041Z",
+      "problems_solved": [
+        {
+          "challenge": 0,
+          "answer": ""
+        },
+        {
+          "challenge": 1,
+          "answer": "Command Line"
+        },
+        {
+          "challenge": 2,
+          "answer": "Command Line"
+        },
+        {
+          "challenge": 3,
+          "answer": "Print working directory"
+        },
+        {
+          "challenge": 4,
+          "answer": "List files and folders"
+        },
+        {
+          "challenge": 5,
+          "answer": "Make a file executable"
+        },
+        {
+          "challenge": 6,
+          "answer": "Full CPU"
+        },
+        {
+          "challenge": 7,
+          "answer": "Yes"
+        },
+        {
+          "challenge": 8,
+          "answer": "Higher"
+        },
+        {
+          "challenge": 9,
+          "answer": "Real-time Control"
+        },
+        {
+          "challenge": 10,
+          "answer": "PIR Sensor"
+        },
+        {
+          "challenge": 11,
+          "answer": "Sometimes"
+        },
+        {
+          "challenge": 12,
+          "answer": "Personal cloud storage"
+        },
+        {
+          "challenge": 13,
+          "answer": "RetroPie"
+        },
+        {
+          "challenge": 14,
+          "answer": "Top"
+        },
+        {
+          "challenge": 15,
+          "answer": "USB ports"
+        },
+        {
+          "challenge": 16,
+          "answer": "Micro USB"
+        },
+        {
+          "challenge": 17,
+          "answer": "VNC"
+        },
+        {
+          "challenge": 18,
+          "answer": "SSH"
+        },
+        {
+          "challenge": 19,
+          "answer": "VNC"
+        },
+        {
+          "challenge": 20,
+          "answer": "Linux"
+        },
+        {
+          "challenge": 21,
+          "answer": "More"
+        },
+        {
+          "challenge": 22,
+          "answer": "Move into a directory"
+        },
+        {
+          "challenge": 23,
+          "answer": "Create an empty file"
+        },
+        {
+          "challenge": 24,
+          "answer": "Show the file content"
+        },
+        {
+          "challenge": 25,
+          "answer": "Delete a file"
+        },
+        {
+          "challenge": 26,
+          "answer": "Create a new folder"
+        },
+        {
+          "challenge": 27,
+          "answer": "Delete an empty folder"
+        },
+        {
+          "challenge": 28,
+          "answer": "print 'something' in the console"
+        },
+        {
+          "challenge": 29,
+          "answer": "Write the output of a command into a file"
+        },
+        {
+          "challenge": 30,
+          "answer": "Give read/write/execute to owner, read/execute to others"
+        },
+        {
+          "challenge": 31,
+          "answer": ""
+        },
+        {
+          "challenge": 32,
+          "answer": ""
+        },
+        {
+          "challenge": 33,
+          "answer": ""
+        },
+        {
+          "challenge": 34,
+          "answer": ""
+        },
+        {
+          "challenge": 35,
+          "answer": ""
+        },
+        {
+          "challenge": 36,
+          "answer": ""
+        },
+        {
+          "challenge": 37,
+          "answer": ""
+        },
+        {
+          "challenge": 38,
+          "answer": ""
+        },
+        {
+          "challenge": 39,
+          "answer": ""
+        },
+        {
+          "challenge": 40,
+          "answer": ""
+        },
+        {
+          "challenge": 41,
+          "answer": ""
+        },
+        {
+          "challenge": 42,
+          "answer": ""
+        },
+        {
+          "challenge": 43,
+          "answer": ""
+        },
+        {
+          "challenge": 44,
+          "answer": ""
+        },
+        {
+          "challenge": 45,
+          "answer": ""
+        },
+        {
+          "challenge": 46,
+          "answer": ""
+        }
+      ],
+      "score": 13,
+      "last_score": 13
+    }
+  }
+}
