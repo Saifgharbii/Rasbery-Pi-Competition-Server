@@ -1,0 +1,196 @@
+{
+  "email": "ranim.rebai@edu.isetcom.tn",
+  "username": "ranim rebai",
+  "quizs": {
+    "cyber": {
+      "duration_in_m": 15,
+      "starting_time": 0,
+      "problems_solved": [],
+      "score": 0,
+      "last_score": 0
+    },
+    "ai": {
+      "duration_in_m": 15,
+      "starting_time": 0,
+      "problems_solved": [],
+      "score": 0,
+      "last_score": 0
+    },
+    "ras": {
+      "duration_in_m": 30,
+      "starting_time": "2025-02-09T20:08:39.860Z",
+      "problems_solved": [
+        {
+          "challenge": 0,
+          "answer": "Raspberry pi OS"
+        },
+        {
+          "challenge": 1,
+          "answer": "Command Line"
+        },
+        {
+          "challenge": 2,
+          "answer": "Full Graphical Desktop Access"
+        },
+        {
+          "challenge": 3,
+          "answer": "Print working directory"
+        },
+        {
+          "challenge": 4,
+          "answer": "List files and folders"
+        },
+        {
+          "challenge": 5,
+          "answer": "Make a file executable"
+        },
+        {
+          "challenge": 6,
+          "answer": "Full CPU"
+        },
+        {
+          "challenge": 7,
+          "answer": "Yes"
+        },
+        {
+          "challenge": 8,
+          "answer": "Higher"
+        },
+        {
+          "challenge": 9,
+          "answer": "IoT, Robotics, AI"
+        },
+        {
+          "challenge": 10,
+          "answer": "PIR Sensor"
+        },
+        {
+          "challenge": 11,
+          "answer": "No"
+        },
+        {
+          "challenge": 12,
+          "answer": "Personal cloud storage"
+        },
+        {
+          "challenge": 13,
+          "answer": "RetroPie"
+        },
+        {
+          "challenge": 14,
+          "answer": "Side"
+        },
+        {
+          "challenge": 15,
+          "answer": "HDMI port"
+        },
+        {
+          "challenge": 16,
+          "answer": "Micro USB"
+        },
+        {
+          "challenge": 17,
+          "answer": "Keyboard, Mouse, Monitor"
+        },
+        {
+          "challenge": 18,
+          "answer": "SSH"
+        },
+        {
+          "challenge": 19,
+          "answer": "VNC"
+        },
+        {
+          "challenge": 20,
+          "answer": "All of the above"
+        },
+        {
+          "challenge": 21,
+          "answer": "More"
+        },
+        {
+          "challenge": 22,
+          "answer": "Move into a directory"
+        },
+        {
+          "challenge": 23,
+          "answer": "Create an empty file"
+        },
+        {
+          "challenge": 24,
+          "answer": "Show the file content"
+        },
+        {
+          "challenge": 25,
+          "answer": "Delete a file"
+        },
+        {
+          "challenge": 26,
+          "answer": "Create a new folder"
+        },
+        {
+          "challenge": 27,
+          "answer": "Delete an empty folder"
+        },
+        {
+          "challenge": 28,
+          "answer": "print 'something' in the console"
+        },
+        {
+          "challenge": 29,
+          "answer": "Write the output of a command into a file"
+        },
+        {
+          "challenge": 30,
+          "answer": "Change ownership of a file"
+        },
+        {
+          "challenge": 31,
+          "answer": "welc0me_t0_ctfs"
+        },
+        {
+          "challenge": 32,
+          "answer": "m0v1ng_thr0ugh_d1r3ct0r13s"
+        },
+        {
+          "challenge": 33,
+          "answer": ""
+        },
+        {
+          "challenge": 34,
+          "answer": "ls -a "
+        },
+        {
+          "challenge": 35,
+          "answer": "PICTF{web_servers_are_cool2}"
+        },
+        {
+          "challenge": 36,
+          "answer": "GPIO.output(18, GPIO.HIGH)"
+        },
+        {
+          "challenge": 37,
+          "answer": "app.run(host=\"0.0.0.0\", port=-500)"
+        },
+        {
+          "challenge": 38,
+          "answer": "GPIO.cleanup()"
+        },
+        {
+          "challenge": 39,
+          "answer": "if pin = 18:"
+        },
+        {
+          "challenge": 40,
+          "answer": "app.run(host='0.0.0.0', port=5000, debug=True)"
+        },
+        {
+          "challenge": 41,
+          "answer": ""
+        }
+      ],
+      "score": 69,
+      "last_score": 69
+    }
+  }
+}
