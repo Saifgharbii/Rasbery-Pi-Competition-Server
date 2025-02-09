@@ -1,24 +1,24 @@
 {
-  "email": "user3@F.com",
-  "username": "user3",
+  "email": "test.user@gmail.com",
+  "username": "test user",
   "quizs": {
     "cyber": {
-      "duration_in_m": 30,
-      "starting_time": "2025-02-09T10:27:25.331Z",
+      "duration_in_m": 15,
+      "starting_time": 0,
       "problems_solved": [],
       "score": 0,
       "last_score": 0
     },
     "ai": {
-      "duration_in_m": 30,
-      "starting_time": "2025-02-09T12:34:43.273Z",
+      "duration_in_m": 15,
+      "starting_time": 0,
       "problems_solved": [],
       "score": 0,
       "last_score": 0
     },
     "ras": {
       "duration_in_m": 30,
-      "starting_time": "2025-02-09T10:34:28.688Z",
+      "starting_time": "2025-02-09T15:10:56.336Z",
       "problems_solved": [],
       "score": 0,
       "last_score": 0
