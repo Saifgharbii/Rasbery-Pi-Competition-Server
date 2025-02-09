@@ -1,0 +1,66 @@
+{
+  "email": "sd@ddddd.D",
+  "username": "dsd",
+  "quizs": {
+    "cyber": {
+      "duration_in_m": 30,
+      "starting_time": "2025-02-09T04:30:04.045Z",
+      "problems_solved": [
+        {
+          "challenge": 0,
+          "answer": "wee"
+        },
+        {
+          "challenge": 1,
+          "answer": "wee"
+        },
+        {
+          "challenge": 2,
+          "answer": "443"
+        }
+      ],
+      "score": 67,
+      "last_score": 100
+    },
+    "ai": {
+      "duration_in_m": 30,
+      "starting_time": "2025-02-09T04:29:24.582Z",
+      "problems_solved": [
+        {
+          "challenge": 0,
+          "answer": "wee"
+        },
+        {
+          "challenge": 1,
+          "answer": "wee"
+        },
+        {
+          "challenge": 2,
+          "answer": "80"
+        }
+      ],
+      "score": 100,
+      "last_score": 0
+    },
+    "rasbari": {
+      "duration_in_m": 30,
+      "starting_time": "2025-02-09T04:29:51.641Z",
+      "problems_solved": [
+        {
+          "challenge": 0,
+          "answer": "weesds"
+        },
+        {
+          "challenge": 1,
+          "answer": "weesqd"
+        },
+        {
+          "challenge": 2,
+          "answer": "80"
+        }
+      ],
+      "score": 100,
+      "last_score": 0
+    }
+  }
+}
