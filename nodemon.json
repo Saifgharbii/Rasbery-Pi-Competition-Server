@@ -1,6 +1,6 @@
 {
   "ext": "js,json",
-  "ignore": ["node_modules", "database", "public"],
+  "ignore": ["node_modules", "database", "public", "src/challenges"],
   "exec": "node"
 }
 

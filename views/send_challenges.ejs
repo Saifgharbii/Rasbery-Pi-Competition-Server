@@ -7,7 +7,7 @@
         
         const response = await fetch(url, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json", "Referer": window.location.href },
           body: JSON.stringify(data),
         });
 

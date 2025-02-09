@@ -9,9 +9,9 @@ const cookieParser = require("cookie-parser");
 // Import custom modules
 const authenticate = require("./src/authenticate");
 const updatetime = require("./src/updatetime");
-const ai_challenges = require("./src/challenges_ai");
-const ras_challenges = require("./src/challenges_ras");
-const cyber_challenges = require("./src/challenges_cyber");
+let ai_challenges = require("./src/challenges/challenges_ai");
+let ras_challenges = require("./src/challenges/challenges_ras");
+let cyber_challenges = require("./src/challenges/challenges_cyber");
 const save_user_data = require("./src/save_user_data");
 const calculate_score = require("./src/calculate_score");
 
@@ -19,6 +19,29 @@ const calculate_score = require("./src/calculate_score");
 let ras_score_board = {};
 let ai_score_board = {};
 let cyber_score_board = {};
+
+
+// Function to reload a specific module
+function reloadModule(modulePath) {
+  const resolvedPath = require.resolve(modulePath);
+  delete require.cache[resolvedPath];
+  return require(modulePath);
+}
+
+// Function to reload all modules
+function reloadAllModules() {
+  try {
+      ai_challenges = reloadModule("./src/challenges/challenges_ai");
+      ras_challenges = reloadModule("./src/challenges/challenges_ras");
+      cyber_challenges = reloadModule("./src/challenges/challenges_cyber");
+      console.log("All modules reloaded successfully.");
+      return { success: true, message: "Modules reloaded successfully." };
+  } catch (error) {
+      console.error("Failed to reload modules:", error);
+      return { success: false, message: "Failed to reload modules.", error: error.message };
+  }
+}
+
 
 // Validate required environment variables
 if (!process.env.SESSION_SECRET) {
@@ -86,6 +109,15 @@ function restrict(req, res, next) {
     res.redirect("/signin");
   }
 }
+
+app.get('/reload', (req, res) => {
+  const result = reloadAllModules();
+  if (result.success) {
+      res.status(200).json(result);
+  } else {
+      res.status(500).json(result);
+  }
+});
 
 // ============================================================
 // ========= Authentication Routes (Signin/Signout) ===========
@@ -218,6 +250,7 @@ app.post("/save", async (req, res) => {
 // ============================================================
 app.get("/result", (req, res) => {
   const referer = req.get("Referer") || req.get("Origin");
+  console.log(referer)
   if (referer.includes("submission-form-rasbery-generalities")) {
     res.redirect("/result_ras");
   } else if (referer.includes("submission-form-security")) {
