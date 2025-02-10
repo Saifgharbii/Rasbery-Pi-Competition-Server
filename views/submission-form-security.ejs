@@ -246,9 +246,32 @@
     </div>
 
     <script>
+      async function getCurrentLocalTime(ipAddress) {
+          const url = `https://www.timeapi.io/api/timezone/ip?ipAddress=${ipAddress}`;
+          
+          try {
+              const response = await fetch(url, {
+                  method: 'GET',
+                  headers: {
+                      'accept': 'application/json',
+                  }
+              });
+
+              if (response.ok) {
+                  const data = await response.json();
+                  return data.currentLocalTime;
+              } else {
+                  throw new Error(`Error: Unable to fetch data (status code ${response.status})`);
+              }
+          } catch (error) {
+              console.error(error);
+              return null;
+          }
+      }
       const now = new Date();
       const last_enter_date = new Date("<%= start_time_sec %>");
-      const durationInMinutes = <%= duration_sec %> - ((now - last_enter_date) / (1000 * 60));
+      let durationInMinutes = <%= duration_sec %> - ((now - last_enter_date) / (1000 * 60));
+      getCurrentLocalTime(ip).then(localTime => {durationInMinutes = <%= duration_sec %> - ((new Date(localTime) - last_enter_date) / (1000 * 60));});
     </script>
     <%- include('timer') -%> <%- include('save_responses') -%> <%-
     include('send_challenges') -%>

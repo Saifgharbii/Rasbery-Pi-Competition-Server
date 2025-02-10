@@ -236,6 +236,7 @@ app.post("/save", async (req, res) => {
     ? "ai"
     : null;
 
+  console.log(req.session.user.email, referer)
   if (quizType && !isTimeUp(req, res, quizType, 2)) {
     req.session.user.quizs[quizType].problems_solved = req.body.flags;
     req.session.user.quizs[quizType].last_score = calculate_score(
@@ -258,7 +259,6 @@ app.post("/save", async (req, res) => {
 // ============================================================
 app.get("/result", (req, res) => {
   const referer = req.get("Referer") || req.get("Origin");
-  console.log(referer)
   if (referer.includes("submission-form-rasbery-generalities")) {
     res.redirect("/result_ras");
   } else if (referer.includes("submission-form-security")) {

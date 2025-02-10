@@ -1,125 +1,28 @@
 {
-  "email": "ranim.rebai@edu.isetcom.tn",
-  "username": "ranim rebai",
+  "email": "takwachermiti550@gmail.com",
+  "username": "takwa ",
   "quizs": {
     "cyber": {
       "duration_in_m": 15,
-      "starting_time": "2025-02-09T21:49:41.078Z",
-      "problems_solved": [
-        {
-          "challenge": 0,
-          "answer": "Protecting software and networks from threats"
-        },
-        {
-          "challenge": 1,
-          "answer": "Confidentiality, Integrity, Availability"
-        },
-        {
-          "challenge": 2,
-          "answer": "A device that can be remotely controlled"
-        },
-        {
-          "challenge": 3,
-          "answer": "Select Correct Answer"
-        },
-        {
-          "challenge": 4,
-          "answer": "Software protection secures code, while network protection secures communication"
-        },
-        {
-          "challenge": 5,
-          "answer": "Making code harder to read"
-        },
-        {
-          "challenge": 6,
-          "answer": "It prevents unauthorized users from easily understanding the code"
-        },
-        {
-          "challenge": 7,
-          "answer": "Obfuscating Python scripts"
-        },
-        {
-          "challenge": 8,
-          "answer": "Converting data into a fixed-length string"
-        },
-        {
-          "challenge": 9,
-          "answer": "SHA-256, MD5, Keccak"
-        },
-        {
-          "challenge": 10,
-          "answer": "Because it cannot be reversed easily"
-        },
-        {
-          "challenge": 11,
-          "answer": "Hashcat"
-        },
-        {
-          "challenge": 12,
-          "answer": "Encryption using one key"
-        },
-        {
-          "challenge": 13,
-          "answer": "Encryption using two keys"
-        },
-        {
-          "challenge": 14,
-          "answer": "Because it is computationally hard to reverse"
-        },
-        {
-          "challenge": 15,
-          "answer": "No, because it is a one-way function"
-        },
-        {
-          "challenge": 16,
-          "answer": "Encryption can be reversed; hashing cannot"
-        },
-        {
-          "challenge": 17,
-          "answer": "Hashcat"
-        },
-        {
-          "challenge": 18,
-          "answer": "By using brute-force and wordlists"
-        },
-        {
-          "challenge": 19,
-          "answer": "A list of common passwords used to guess credentials"
-        },
-        {
-          "challenge": 20,
-          "answer": "A method to convert data into an unreadable format"
-        },
-        {
-          "challenge": 21,
-          "answer": "Capturing and analyzing network traffic"
-        },
-        {
-          "challenge": 22,
-          "answer": "Wireshark"
-        },
-        {
-          "challenge": 23,
-          "answer": "Intercepting communication between two parties"
-        }
-      ],
-      "score": 96,
-      "last_score": 96
+      "starting_time": 0,
+      "problems_solved": [],
+      "score": 0,
+      "last_score": 0
     },
     "ai": {
       "duration_in_m": 15,
-      "starting_time": "2025-02-09T22:12:17.174Z",
+      "starting_time": 0,
       "problems_solved": [],
       "score": 0,
       "last_score": 0
     },
     "ras": {
-      "duration_in_m": 30,
-      "starting_time": "2025-02-09T20:08:39.860Z",
+      "duration_in_m": 80,
+      "starting_time": "2025-02-09T21:36:57.345Z",
       "problems_solved": [
         {
           "challenge": 0,
-          "answer": "Raspberry pi OS"
+          "answer": "ubuntu"
         },
         {
           "challenge": 1,
@@ -159,7 +62,7 @@
         },
         {
           "challenge": 10,
-          "answer": "PIR Sensor"
+          "answer": "Breadboard"
         },
         {
           "challenge": 11,
@@ -243,23 +146,23 @@
         },
         {
           "challenge": 31,
-          "answer": "welc0me_t0_ctfs"
+          "answer": "first.txt"
         },
         {
           "challenge": 32,
-          "answer": "m0v1ng_thr0ugh_d1r3ct0r13s"
+          "answer": "CTF{m0v1ng_thr0ugh_d1r3ct0r13s}"
         },
         {
           "challenge": 33,
-          "answer": ""
+          "answer": "PICTF{web_servers_are_cool2}"
         },
         {
           "challenge": 34,
-          "answer": "ls -a "
+          "answer": "GPIO.output(18, GPIO.HIGH)"
         },
         {
           "challenge": 35,
-          "answer": "PICTF{web_servers_are_cool2}"
+          "answer": "app.run(host=\"0.0.0.0\", port=-500)"
         },
         {
           "challenge": 36,
@@ -267,27 +170,27 @@
         },
         {
           "challenge": 37,
-          "answer": "app.run(host=\"0.0.0.0\", port=-500)"
+          "answer": "if pin = 18"
         },
         {
           "challenge": 38,
-          "answer": "GPIO.cleanup()"
+          "answer": "data = request.json"
         },
         {
           "challenge": 39,
-          "answer": "if pin = 18:"
+          "answer": "data = request.json"
         },
         {
           "challenge": 40,
-          "answer": "app.run(host='0.0.0.0', port=5000, debug=True)"
+          "answer": "led1,led3,led6"
         },
         {
           "challenge": 41,
-          "answer": ""
+          "answer": "led1,led6"
         }
       ],
-      "score": 69,
-      "last_score": 69
+      "score": 79,
+      "last_score": 79
     }
   }
 }

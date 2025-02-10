@@ -5,7 +5,102 @@
     "cyber": {
       "duration_in_m": 15,
       "starting_time": 0,
-      "problems_solved": [],
+      "problems_solved": [{
+        "challenge": 0,
+        "answer": "Protecting software and networks from threats"
+      },
+      {
+        "challenge": 1,
+        "answer": "Confidentiality, Integrity, Availability"
+      },
+      {
+        "challenge": 2,
+        "answer": "A device that can be remotely controlled"
+      },
+      {
+        "challenge": 3,
+        "answer": "Select Correct Answer"
+      },
+      {
+        "challenge": 4,
+        "answer": "Software protection secures code, while network protection secures communication"
+      },
+      {
+        "challenge": 5,
+        "answer": "Making code harder to read"
+      },
+      {
+        "challenge": 6,
+        "answer": "It prevents unauthorized users from easily understanding the code"
+      },
+      {
+        "challenge": 7,
+        "answer": "Obfuscating Python scripts"
+      },
+      {
+        "challenge": 8,
+        "answer": "Converting data into a fixed-length string"
+      },
+      {
+        "challenge": 9,
+        "answer": "SHA-256, MD5, Keccak"
+      },
+      {
+        "challenge": 10,
+        "answer": "Because it cannot be reversed easily"
+      },
+      {
+        "challenge": 11,
+        "answer": "Hashcat"
+      },
+      {
+        "challenge": 12,
+        "answer": "Encryption using one key"
+      },
+      {
+        "challenge": 13,
+        "answer": "Encryption using two keys"
+      },
+      {
+        "challenge": 14,
+        "answer": "Because it is computationally hard to reverse"
+      },
+      {
+        "challenge": 15,
+        "answer": "No, because it is a one-way function"
+      },
+      {
+        "challenge": 16,
+        "answer": "Encryption can be reversed; hashing cannot"
+      },
+      {
+        "challenge": 17,
+        "answer": "Hashcat"
+      },
+      {
+        "challenge": 18,
+        "answer": "By using brute-force and wordlists"
+      },
+      {
+        "challenge": 19,
+        "answer": "A list of common passwords used to guess credentials"
+      },
+      {
+        "challenge": 20,
+        "answer": "A method to convert data into an unreadable format"
+      },
+      {
+        "challenge": 21,
+        "answer": "Capturing and analyzing network traffic"
+      },
+      {
+        "challenge": 22,
+        "answer": "Wireshark"
+      },
+      {
+        "challenge": 23,
+        "answer": "Intercepting communication between two parties"
+      }],
       "score": 0,
       "last_score": 0
     },

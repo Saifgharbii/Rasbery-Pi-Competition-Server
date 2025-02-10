@@ -4,17 +4,231 @@
   "quizs": {
     "cyber": {
       "duration_in_m": 15,
-      "starting_time": 0,
-      "problems_solved": [],
-      "score": 0,
-      "last_score": 0
+      "starting_time": "2025-02-09T21:45:30.402Z",
+      "problems_solved": [
+        {
+          "challenge": 0,
+          "answer": "Protecting software and networks from threats"
+        },
+        {
+          "challenge": 1,
+          "answer": "Confidentiality, Integrity, Availability"
+        },
+        {
+          "challenge": 2,
+          "answer": "A device that can be remotely controlled"
+        },
+        {
+          "challenge": 3,
+          "answer": "Because it must be designed into a system from the start"
+        },
+        {
+          "challenge": 4,
+          "answer": "Software protection secures code, while network protection secures communication"
+        },
+        {
+          "challenge": 5,
+          "answer": "Making code harder to read"
+        },
+        {
+          "challenge": 6,
+          "answer": "It prevents unauthorized users from easily understanding the code"
+        },
+        {
+          "challenge": 7,
+          "answer": "Obfuscating Python scripts"
+        },
+        {
+          "challenge": 8,
+          "answer": "Converting data into a fixed-length string"
+        },
+        {
+          "challenge": 9,
+          "answer": "SHA-256, MD5, Keccak"
+        },
+        {
+          "challenge": 10,
+          "answer": "Because it cannot be reversed easily"
+        },
+        {
+          "challenge": 11,
+          "answer": "PyArmor"
+        },
+        {
+          "challenge": 12,
+          "answer": "Encryption using one key"
+        },
+        {
+          "challenge": 13,
+          "answer": "Encryption using two keys"
+        },
+        {
+          "challenge": 14,
+          "answer": "Because it is computationally hard to reverse"
+        },
+        {
+          "challenge": 15,
+          "answer": "Yes, by using enough computing power"
+        },
+        {
+          "challenge": 16,
+          "answer": "Encryption can be reversed; hashing cannot"
+        },
+        {
+          "challenge": 17,
+          "answer": "Hashcat"
+        },
+        {
+          "challenge": 18,
+          "answer": "Select Correct Answer"
+        },
+        {
+          "challenge": 19,
+          "answer": "A list of common passwords used to guess credentials"
+        },
+        {
+          "challenge": 20,
+          "answer": "A method to convert data into an unreadable format"
+        },
+        {
+          "challenge": 21,
+          "answer": "Capturing and analyzing network traffic"
+        },
+        {
+          "challenge": 22,
+          "answer": "Wireshark"
+        },
+        {
+          "challenge": 23,
+          "answer": "Intercepting communication between two parties"
+        }
+      ],
+      "score": 88,
+      "last_score": 88
     },
     "ai": {
       "duration_in_m": 15,
-      "starting_time": 0,
-      "problems_solved": [],
-      "score": 0,
-      "last_score": 0
+      "starting_time": "2025-02-09T22:05:37.608Z",
+      "problems_solved": [
+        {
+          "challenge": 0,
+          "answer": "Machine Learning"
+        },
+        {
+          "challenge": 1,
+          "answer": "1957"
+        },
+        {
+          "challenge": 2,
+          "answer": "Iterative"
+        },
+        {
+          "challenge": 3,
+          "answer": "Data Collection"
+        },
+        {
+          "challenge": 4,
+          "answer": "Artificial Intelligence"
+        },
+        {
+          "challenge": 5,
+          "answer": "Recurrent Neural Network"
+        },
+        {
+          "challenge": 6,
+          "answer": "Turing Test"
+        },
+        {
+          "challenge": 7,
+          "answer": "Garry Kasparov"
+        },
+        {
+          "challenge": 8,
+          "answer": "AlphaGo"
+        },
+        {
+          "challenge": 9,
+          "answer": "GPT-3"
+        },
+        {
+          "challenge": 10,
+          "answer": "Multilayer Perceptron"
+        },
+        {
+          "challenge": 11,
+          "answer": "Feature extraction"
+        },
+        {
+          "challenge": 12,
+          "answer": "MNIST"
+        },
+        {
+          "challenge": 13,
+          "answer": "ResNet"
+        },
+        {
+          "challenge": 14,
+          "answer": "To make future predictions"
+        },
+        {
+          "challenge": 15,
+          "answer": "80,000$"
+        },
+        {
+          "challenge": 16,
+          "answer": "Classification"
+        },
+        {
+          "challenge": 17,
+          "answer": "Unsupervised Learning"
+        },
+        {
+          "challenge": 18,
+          "answer": "Dropout"
+        },
+        {
+          "challenge": 19,
+          "answer": "Underfitting"
+        },
+        {
+          "challenge": 20,
+          "answer": "Reduce model complexity"
+        },
+        {
+          "challenge": 21,
+          "answer": "To improve model performance"
+        },
+        {
+          "challenge": 22,
+          "answer": "Cross-Entropy Loss"
+        },
+        {
+          "challenge": 23,
+          "answer": "Grid Search"
+        },
+        {
+          "challenge": 24,
+          "answer": "To minimize the loss function"
+        },
+        {
+          "challenge": 25,
+          "answer": "Accuracy"
+        },
+        {
+          "challenge": 26,
+          "answer": "The model oscillates and fails to converge"
+        },
+        {
+          "challenge": 27,
+          "answer": "80-20"
+        },
+        {
+          "challenge": 28,
+          "answer": "Self-supervised Learning"
+        }
+      ],
+      "score": 83,
+      "last_score": 83
     },
     "ras": {
       "duration_in_m": 30,
